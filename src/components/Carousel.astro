@@ -106,6 +106,7 @@ const styles = {
 <script>
   import EmblaCarousel, { type EmblaCarouselType } from "embla-carousel";
   import AutoScroll from "embla-carousel-auto-scroll";
+  import { shuffleArray } from "../utils";
 
   const carousels = new Map<HTMLElement, EmblaCarouselType>();
 
@@ -152,10 +153,7 @@ const styles = {
     const container = viewport.querySelector(".embla__container")!;
     const slides = Array.from(container.children);
 
-    for (let i = slides.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [slides[i], slides[j]] = [slides[j], slides[i]];
-    }
+    shuffleArray(slides);
 
     slides.forEach((slide) => container.appendChild(slide));
   }

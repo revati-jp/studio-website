@@ -1,15 +1,46 @@
 <script lang="ts">
-	import { DISCORD_URL } from '../../utils/variables';
+	import { onMount } from 'svelte';
+	import { DISCORD_URL } from '../../utils';
 
 	const MAIL_ADDRESS = 'contact.revati@gmail.com';
 
-	let category: 'request' | 'entry' = 'request';
+	type TabType = 'request' | 'apply';
+
+	let category = $state<TabType>('request');
+
+	function initializeTabFromURL() {
+		if (typeof window === 'undefined') return;
+
+		const urlParams = new URLSearchParams(window.location.search);
+		const tabParam = urlParams.get('tab') as TabType;
+
+		if (tabParam && ['request', 'apply'].includes(tabParam)) {
+			category = tabParam;
+		}
+	}
+
+	function updateURL(tabId: TabType) {
+		if (typeof window === 'undefined') return;
+
+		const url = new URL(window.location.href);
+		url.searchParams.set('tab', tabId);
+		window.history.replaceState({}, '', url.toString());
+	}
+
+	onMount(() => {
+		initializeTabFromURL();
+	});
+
+	function handleTabChange(tabId: TabType) {
+		category = tabId;
+		updateURL(tabId);
+	}
 </script>
 
 <div class="tab">
-	<button on:click={() => (category = 'request')} class:is-active={category === 'request'}
+	<button onclick={() => handleTabChange('request')} class:is-active={category === 'request'}
 		>ご依頼・ご相談</button
-	><button on:click={() => (category = 'entry')} class:is-active={category === 'entry'}
+	><button onclick={() => handleTabChange('apply')} class:is-active={category === 'apply'}
 		>クリエイター応募</button
 	>
 </div>
@@ -28,7 +59,7 @@
 				Discordをご利用でない方は、<a href="mailto:{MAIL_ADDRESS}">{MAIL_ADDRESS}</a> にご連絡ください。
 			</p>
 		</div>
-	{:else if category === 'entry'}
+	{:else if category === 'apply'}
 		<div>
 			<h2>JOIN OUR TEAM</h2>
 			<p>REVATI Studio では、共に新しい価値を創造してくれるクリエイターを随時募集しています。</p>

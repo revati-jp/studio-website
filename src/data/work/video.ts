@@ -6,6 +6,9 @@ import freja250510 from "../../assets/works/250510_tmnl_freja.webp";
 import apex250618 from "../../assets/works/250618_tmnl_apex.webp";
 import coach250530 from "../../assets/works/250530_tmnl_coach.webp";
 import subacc250716 from "../../assets/works/250716_tmnl_subacc.webp";
+import season250504 from "../../assets/works/250504_tmnl_season.webp";
+import blizzard250518 from "../../assets/works/250518_tmnl_blizzard.webp";
+import custom250726 from "../../assets/works/250726_tmnl_custom.webp";
 
 export const VIDEO = [
   {
@@ -227,6 +230,68 @@ export const VIDEO = [
         type: "video",
         title: "Nyam Gaming Cup 前哨戦 結婚をかけていざ勝負 VSばさお",
         src: "https://www.youtube.com/watch?v=98YcrhcILFk",
+      },
+    ],
+  },
+  {
+    title: "シーズン終盤のOWを見てみましょう【Overwatch2】",
+    clientName: "V's",
+    createdAt: "2025-05-04",
+    tags: ["動画編集", "サムネイル制作"],
+    authors: ["Igaue", "Reku"],
+    assets: [
+      {
+        type: "video",
+        title: "シーズン終盤のOWを見てみましょう【Overwatch2】",
+        src: "https://www.youtube.com/watch?v=iSqXdXy8714",
+      },
+      {
+        type: "image",
+        caption: "サムネイル",
+        src: season250504,
+        showInCarousel: true,
+      },
+    ],
+  },
+  {
+    title: "この会話はblizzardに聞かれている【Overwatch2】",
+    clientName: "V's",
+    createdAt: "2025-05-18",
+    tags: ["動画編集", "サムネイル制作"],
+    authors: ["Igaue", "Reku"],
+    assets: [
+      {
+        type: "video",
+        title: "この会話はblizzardに聞かれている【Overwatch2】",
+        src: "https://www.youtube.com/watch?v=FgqY782TL00",
+      },
+      {
+        type: "image",
+        caption: "サムネイル",
+        src: blizzard250518,
+        showInCarousel: true,
+      },
+    ],
+  },
+  {
+    title:
+      "プラチナゲーマー参加型カスタムで”TOP500”達に遊ばれる...【Overwatch2】",
+    clientName: "V's",
+    createdAt: "2025-07-26",
+    tags: ["動画編集", "サムネイル制作"],
+    authors: ["Igaue", "Reku"],
+    assets: [
+      {
+        type: "video",
+        title:
+          "プラチナゲーマー参加型カスタムで”TOP500”達に遊ばれる...【Overwatch2】",
+        src: "https://www.youtube.com/watch?v=EyHU18CWES8",
+      },
+      {
+        type: "image",
+        caption: "サムネイル",
+        src: custom250726,
+        showInCarousel: true,
       },
     ],
   },

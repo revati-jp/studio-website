@@ -8,10 +8,11 @@
 	import { onMount } from 'svelte';
 	import ControlPanel from './ControlPanel.svelte';
 	import WaveDisplay from './WaveDisplay.svelte';
-	import { getMusicList } from '../../utils';
+	import { getMusicList, shuffleArray } from '../../utils';
 	import type { PlayerState } from '../../types';
 
 	const tracks = getMusicList();
+	shuffleArray(tracks); // プレイリストをシャッフル
 
 	// 音楽プレイヤーの状態
 	let playerState = $state<PlayerState>({

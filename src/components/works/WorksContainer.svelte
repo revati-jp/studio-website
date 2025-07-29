@@ -53,11 +53,13 @@
 	}
 
 	const filteredWorks = $derived.by((): Work[] => {
-		if (activeTab === 'all') {
-			return getAllWorks();
-		}
+		let categoryWorks: Work[];
 
-		const categoryWorks: Work[] = WORKS[activeTab] || [];
+		if (activeTab === 'all') {
+			categoryWorks = getAllWorks();
+		} else {
+			categoryWorks = WORKS[activeTab] ?? [];
+		}
 
 		// デザインタブの場合、videoの動画+サムネイル作品も追加
 		if (activeTab === 'design') {
@@ -86,7 +88,7 @@
 				}
 			});
 
-			return Array.from(workMap.values());
+			categoryWorks = Array.from(workMap.values());
 		}
 
 		// musicタブの場合、videoの動画+BGM作品も追加
@@ -117,8 +119,10 @@
 				}
 			});
 
-			return Array.from(workMap.values());
+			categoryWorks = Array.from(workMap.values());
 		}
+
+		categoryWorks.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
 		return categoryWorks;
 	});
