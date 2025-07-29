@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { DISCORD_URL } from '../../utils/variables';
+	import { DISCORD_URL } from '../../utils';
 
 	const MAIL_ADDRESS = 'contact.revati@gmail.com';
 
