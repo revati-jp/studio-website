@@ -274,7 +274,8 @@ export const VIDEO = [
     ],
   },
   {
-    title: "プラチナゲーマー参加型カスタムで”TOP500”達に遊ばれる...【Overwatch2】",
+    title:
+      "プラチナゲーマー参加型カスタムで”TOP500”達に遊ばれる...【Overwatch2】",
     clientName: "V's",
     createdAt: "2025-07-26",
     tags: ["動画編集", "サムネイル制作"],
@@ -282,7 +283,8 @@ export const VIDEO = [
     assets: [
       {
         type: "video",
-        title: "プラチナゲーマー参加型カスタムで”TOP500”達に遊ばれる...【Overwatch2】",
+        title:
+          "プラチナゲーマー参加型カスタムで”TOP500”達に遊ばれる...【Overwatch2】",
         src: "https://www.youtube.com/watch?v=EyHU18CWES8",
       },
       {

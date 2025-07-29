@@ -122,9 +122,7 @@
 			categoryWorks = Array.from(workMap.values());
 		}
 
-		categoryWorks.sort((a, b) => (
-			new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-		));
+		categoryWorks.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
 		return categoryWorks;
 	});
