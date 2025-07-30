@@ -12,6 +12,7 @@ import game250609 from "../../assets/works/250609_annc_game.webp";
 import result250514 from "../../assets/works/250514_annc_result.webp";
 import academy250427 from "../../assets/works/250427_annc_academy.webp";
 import ccdiv250725 from "../../assets/works/250725_annc_ccdiv.webp";
+import gamejam250728 from "../../assets/works/250728_gamejam.webp";
 
 export const DESIGN = [
   {
@@ -196,6 +197,21 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI 加入発表画像",
         src: ccdiv250725,
+        showInCarousel: true,
+      },
+    ],
+  },
+  {
+    title: "学内ゲームジャム デジタルチラシ",
+    clientName: "HAL大阪",
+    createdAt: "2025-07-28",
+    tags: ["デザイン"],
+    authors: ["おしお"],
+    assets: [
+      {
+        type: "image",
+        caption: "学内ゲームジャム デジタルチラシ",
+        src: gamejam250728,
         showInCarousel: true,
       },
     ],
