@@ -44,6 +44,7 @@ export class AudioAnalyzer {
         this.gainNode = this.audioContext.createGain();
 
         this.analyser.fftSize = 512;
+        this.analyser.smoothingTimeConstant = 0.85;
         this.bufferLength = this.analyser.frequencyBinCount;
         this.dataArray = new Uint8Array(this.bufferLength);
 
