@@ -102,7 +102,7 @@
 			<div class="modal-body">
 				<div class="work-meta">
 					<div class="work-date">
-						<span class="meta-label">制作日:</span>
+						<span class="meta-label">公開日:</span>
 						<span class="meta-value">{formatDate(work.createdAt)}</span>
 					</div>
 
