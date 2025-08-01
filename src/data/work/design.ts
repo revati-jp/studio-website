@@ -16,7 +16,7 @@ import gamejam250728 from "../../assets/works/250728_gamejam.webp";
 
 export const DESIGN = [
   {
-    title: "X用ヘッダー",
+    title: "ヘッダー",
     clientName: "REVATI",
     createdAt: "2024-04-01",
     tags: ["デザイン"],
@@ -31,7 +31,7 @@ export const DESIGN = [
     ],
   },
   {
-    title: "OW部門 発表画像",
+    title: "ロスター発表画像",
     clientName: "REVATI",
     createdAt: "2025-05-11",
     tags: ["告知画像"],
@@ -39,7 +39,7 @@ export const DESIGN = [
     assets: [
       {
         type: "image",
-        caption: "REVATI OW部門 告知画像",
+        caption: "REVATI ロスター発表画像",
         src: ow250511,
         showInCarousel: true,
       },
@@ -61,7 +61,7 @@ export const DESIGN = [
     ],
   },
   {
-    title: "REVATI Studio ヘッダー",
+    title: "ヘッダー",
     clientName: "REVATI Studio",
     createdAt: "2025-07-24",
     tags: ["デザイン"],
@@ -82,7 +82,7 @@ export const DESIGN = [
     ],
   },
   {
-    title: "REVATI Studio ロゴ",
+    title: "ロゴ",
     clientName: "REVATI Studio",
     createdAt: "2025-07-24",
     tags: ["デザイン"],
@@ -97,7 +97,7 @@ export const DESIGN = [
     ],
   },
   {
-    title: "APEX部門 発表画像",
+    title: "ロスター発表画像",
     clientName: "REVATI",
     createdAt: "2025-07-16",
     tags: ["告知画像"],
@@ -105,7 +105,7 @@ export const DESIGN = [
     assets: [
       {
         type: "image",
-        caption: "REVATI APEX部門 発表画像",
+        caption: "REVATI ロスター発表画像",
         src: apexdiv250716,
         showInCarousel: true,
       },
@@ -172,7 +172,7 @@ export const DESIGN = [
     ],
   },
   {
-    title: "OWアカデミー部門 発表画像",
+    title: "ロスター発表画像",
     clientName: "REVATI",
     createdAt: "2025-04-27",
     tags: ["告知画像"],
@@ -180,14 +180,14 @@ export const DESIGN = [
     assets: [
       {
         type: "image",
-        caption: "REVATI OWアカデミー部門 発表画像",
+        caption: "REVATI ロスター発表画像",
         src: academy250427,
         showInCarousel: true,
       },
     ],
   },
   {
-    title: "REVATI 加入発表画像",
+    title: "加入発表画像",
     clientName: "REVATI",
     createdAt: "2025-07-25",
     tags: ["告知画像"],
