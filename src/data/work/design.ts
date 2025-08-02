@@ -14,6 +14,7 @@ import academy250427 from "../../assets/works/250427_annc_academy.webp";
 import ccdiv250725 from "../../assets/works/250725_annc_ccdiv.webp";
 import gamejam250728 from "../../assets/works/250728_gamejam.webp";
 import roster250801 from "../../assets/works/250801_annc_roster.webp";
+import roster250802 from "../../assets/works/250802_annc_roster.webp";
 
 export const DESIGN = [
   {
@@ -228,6 +229,21 @@ export const DESIGN = [
         type: "image",
         caption: "Toxic Hamster ロスター発表画像",
         src: roster250801,
+        showInCarousel: true,
+      },
+    ],
+  },
+  {
+    title: "ロスター発表画像",
+    clientName: "REVATI",
+    createdAt: "2025-08-02",
+    tags: ["告知画像"],
+    authors: ["HIKA"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI ロスター発表画像",
+        src: roster250802,
         showInCarousel: true,
       },
     ],
