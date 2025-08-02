@@ -123,7 +123,7 @@
 		playerState.currentTrack = playerState.playlist[index];
 		playerState.currentTime = 0;
 		playerState.duration = 0;
-		playerState.isPlaying = false;
+		// playerState.isPlaying = false; // フェードアウトを起こさないために再生したままにする
 
 		// 新しいトラックが読み込まれたら再生開始
 		if (wasPlaying) {

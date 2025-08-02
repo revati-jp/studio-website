@@ -303,6 +303,12 @@
 		margin: 0;
 		line-height: 1.3;
 		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		// 3行より多い場合は省略
+		display: -webkit-box;
+		line-clamp: 3;
+    -webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	.work-tags {

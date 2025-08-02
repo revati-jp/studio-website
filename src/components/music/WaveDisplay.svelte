@@ -197,7 +197,7 @@
 		&.mobile {
 			top: 0;
 			right: 0;
-			width: 70px;
+			width: 60px;
 			height: calc(100dvh - var(--mobile-control-height) * (1 - var(--mobile-expanded, 0)));
 			align-items: center;
 			justify-content: center;
