@@ -123,4 +123,18 @@ export const MUSIC = [
       },
     ],
   },
+  {
+    title: "Done With You",
+    createdAt: "2025-08-01",
+    tags: ["BGM"],
+    authors: ["くりす"],
+    thumbnail: musicNoteIconImage,
+    assets: [
+      {
+        type: "music",
+        title: "Done With You",
+        src: "/music/done-with-you.mp3",
+      },
+    ],
+  },
 ] satisfies Work[];
