@@ -69,7 +69,7 @@ export function getYouTubeThumbnail(
     throw new Error("Video ID is required");
   }
 
-  const qualityMap = {
+  const qualityMap: Record<ThumbnailQuality, string> = {
     maxres: "maxresdefault.jpg", // 1280x720 (最高解像度)
     hq: "hqdefault.jpg", // 480x360 (高解像度)
     mq: "mqdefault.jpg", // 320x180 (中解像度)
