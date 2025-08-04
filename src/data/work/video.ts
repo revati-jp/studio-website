@@ -295,4 +295,18 @@ export const VIDEO = [
       },
     ],
   },
+  {
+    title: "君が一度想像した最強にかっこいい武器で戦おう！",
+    clientName: "れる",
+    createdAt: "2025-08-02",
+    tags: ["動画編集"],
+    authors: ["ちゃちゃまる"],
+    assets: [
+      {
+        type: "video",
+        title: "君が一度想像した最強にかっこいい武器で戦おう！",
+        src: "https://www.youtube.com/watch?v=qE6N3dU2YBo",
+      },
+    ],
+  },
 ] satisfies Work[];
