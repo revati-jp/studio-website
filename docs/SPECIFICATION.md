@@ -83,9 +83,11 @@
 |       1 | WorkCard アイコンサムネイル                | [`src/components/works/WorkCard.svelte>style>.icon-thumbnail`](../src/components/works/WorkCard.svelte)                  |
 
 ## 音声ファイルについて
+
 - `public/music/` 以下に配置
 - wavファイルはffmpegを使用してmp3に圧縮
 - ビットレートは基本的に192kbpsに設定 (サイズが大きすぎる場合は下げるのも可)
+
 ```bash
 ffmpeg -i input.wav -c:a libmp3lame -b:a 192k output.mp3
 ```
