@@ -74,7 +74,7 @@
 			const videoId = extractYouTubeVideoId(videoUrl);
 			if (videoId) {
 				return {
-					src: getYouTubeThumbnail(videoId),
+					src: getYouTubeThumbnail(videoId, 'hq'),
 					isIcon: false,
 					backgroundColor: null,
 					width: null,
@@ -306,7 +306,7 @@
 		// 3行より多い場合は省略
 		display: -webkit-box;
 		line-clamp: 3;
-    -webkit-line-clamp: 3;
+		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 	}

@@ -81,3 +81,13 @@
 |     224 | 画面追従リンク群                           | [`src/components/FixedLinks.astro>style>ul`](../src/components/FixedLinks.astro)                                         |
 |      10 | WorkCard オーバーレイ                      | [`src/components/works/WorkCard.svelte>style>.work-overlay`](../src/components/works/WorkCard.svelte)                    |
 |       1 | WorkCard アイコンサムネイル                | [`src/components/works/WorkCard.svelte>style>.icon-thumbnail`](../src/components/works/WorkCard.svelte)                  |
+
+## 音声ファイルについて
+
+- `public/music/` 以下に配置
+- wavファイルはffmpegを使用してmp3に圧縮
+- ビットレートは基本的に192kbpsに設定 (サイズが大きすぎる場合は下げるのも可)
+
+```bash
+ffmpeg -i input.wav -c:a libmp3lame -b:a 192k output.mp3
+```
