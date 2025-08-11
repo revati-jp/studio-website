@@ -9,6 +9,8 @@
 
 	let { asset }: Props = $props();
 
+	const TWEET_EMBED_DELAY = 300;
+
 	function getImgUrlFromSrc(src: ImageSource) {
 		return typeof src === 'string' ? src : src.src;
 	}
@@ -84,17 +86,17 @@
 
 	function createTweetEmbedAction(element: HTMLElement, tweetUrl: string) {
 		// モーダルが完全に開かれてから実行
-		const timeoutId = setTimeout(async () => {
+		let timeoutId = setTimeout(async () => {
 			await createTweetEmbed(element, tweetUrl);
-		}, 300);
+		}, TWEET_EMBED_DELAY);
 
-		return {
+		return { 
 			update(newTweetUrl: string) {
 				if (newTweetUrl !== tweetUrl) {
 					clearTimeout(timeoutId);
-					setTimeout(async () => {
+					timeoutId = setTimeout(async () => {
 						await createTweetEmbed(element, newTweetUrl);
-					}, 300);
+					}, TWEET_EMBED_DELAY);
 				}
 			},
 			destroy() {
