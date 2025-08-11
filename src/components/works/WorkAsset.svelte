@@ -23,7 +23,84 @@
 		if (asset.type === 'website' || asset.type === 'external') {
 			return asset.url;
 		}
+		if (asset.type === 'tweet') {
+			return asset.tweetUrl;
+		}
 		return '';
+	}
+
+	let twitterScriptLoaded = $state(false);
+	let twitterWidgets: any = $state(null);
+
+	function loadTwitterScript() {
+		if (twitterScriptLoaded || typeof window === 'undefined') return Promise.resolve();
+
+		return new Promise<void>((resolve) => {
+			const script = document.createElement('script');
+			script.async = true;
+			script.src = 'https://platform.twitter.com/widgets.js';
+			script.onload = () => {
+				twitterScriptLoaded = true;
+				twitterWidgets = (window as any).twttr;
+				resolve();
+			};
+			script.onerror = () => {
+				console.error('Failed to load Twitter widgets script');
+				resolve();
+			};
+			document.head.appendChild(script);
+		});
+	}
+
+	function extractTweetId(url: string): string | null {
+		const match = url.match(/\/status\/(\d+)/);
+		return match ? match[1] : null;
+	}
+
+	async function createTweetEmbed(element: HTMLElement, tweetUrl: string) {
+		if (!twitterWidgets) {
+			await loadTwitterScript();
+			if (!twitterWidgets) return;
+		}
+
+		const tweetId = extractTweetId(tweetUrl);
+		if (!tweetId) return;
+
+		element.innerHTML = '';
+
+		try {
+			await twitterWidgets.widgets.createTweet(tweetId, element, {
+				theme: 'dark',
+				conversation: 'none',
+				cards: 'visible',
+				align: 'center',
+				width: '100%'
+			});
+		} catch (error) {
+			console.error('Failed to create tweet embed:', error);
+			element.innerHTML = `<a href="${tweetUrl}" target="_blank" rel="noopener noreferrer" style="color: #1da1f2; text-decoration: none; display: block; text-align: center; padding: 2rem;">ツイートを見る</a>`;
+		}
+	}
+
+	function createTweetEmbedAction(element: HTMLElement, tweetUrl: string) {
+		// モーダルが完全に開かれてから実行
+		const timeoutId = setTimeout(async () => {
+			await createTweetEmbed(element, tweetUrl);
+		}, 300);
+
+		return {
+			update(newTweetUrl: string) {
+				if (newTweetUrl !== tweetUrl) {
+					clearTimeout(timeoutId);
+					setTimeout(async () => {
+						await createTweetEmbed(element, newTweetUrl);
+					}, 300);
+				}
+			},
+			destroy() {
+				clearTimeout(timeoutId);
+			}
+		};
 	}
 </script>
 
@@ -87,6 +164,19 @@
 				{asset.title ?? '外部リンク'}
 				<ExternalLinkIcon />
 			</a>
+		</div>
+	{:else if asset.type === 'tweet'}
+		<div class="asset-tweet">
+			<div class="asset-header">
+				<span class="asset-type-chip tweet">Tweet</span>
+			</div>
+			<div class="tweet-embed-container" use:createTweetEmbedAction={asset.tweetUrl}>
+				<!-- Twitter埋め込みがここに表示される -->
+				<div class="tweet-loading">
+					<p>ツイートを読み込み中...</p>
+					<a href={asset.tweetUrl} target="_blank" rel="noopener noreferrer"> ツイートを見る </a>
+				</div>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -152,6 +242,12 @@
 			color: #9ca3af;
 			border: 1px solid rgba(#6b7280, 0.3);
 		}
+
+		&.tweet {
+			background: rgba(#1da1f2, 0.2);
+			color: #1da1f2;
+			border: 1px solid rgba(#1da1f2, 0.3);
+		}
 	}
 
 	.asset-image,
@@ -213,6 +309,47 @@
 		}
 	}
 
+	.asset-tweet {
+		.tweet-embed-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			min-height: 200px;
+			text-align: center;
+
+			:global(.twitter-tweet) {
+				margin: 0 auto !important;
+				max-width: 550px !important;
+				width: 100% !important;
+				border-radius: 12px !important;
+			}
+
+			.tweet-loading {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.75rem;
+				color: rgba(255, 255, 255, 0.6);
+				
+				p {
+					margin: 0;
+					font-size: 0.9rem;
+				}
+				
+				a {
+					color: #1da1f2;
+					text-decoration: none;
+					font-size: 0.9rem;
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
 	@media (max-width: 768px) {
 		.asset-title {
 			font-size: 0.9rem;
@@ -235,6 +372,38 @@
 
 		.asset-item {
 			padding: 1rem;
+		}
+
+		.asset-tweet {
+			.tweet-embed-container {
+				min-height: 150px;
+
+				.tweet-loading {
+					font-size: 0.8rem;
+				}
+
+				:global(.twitter-tweet) {
+					max-width: 100% !important;
+					width: 100% !important;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		.asset-tweet {
+			.tweet-embed-container {
+				min-height: 120px;
+
+				.tweet-loading {
+					font-size: 0.75rem;
+				}
+
+				:global(.twitter-tweet) {
+					max-width: 100% !important;
+					width: 100% !important;
+				}
+			}
 		}
 	}
 </style>
