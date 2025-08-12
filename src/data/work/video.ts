@@ -9,6 +9,7 @@ import subacc250716 from "../../assets/works/250716_tmnl_subacc.webp";
 import season250504 from "../../assets/works/250504_tmnl_season.webp";
 import blizzard250518 from "../../assets/works/250518_tmnl_blizzard.webp";
 import custom250726 from "../../assets/works/250726_tmnl_custom.webp";
+import roster250809 from "../../assets/works/250809_tmnl_roster.webp";
 
 export const VIDEO = [
   {
@@ -309,4 +310,18 @@ export const VIDEO = [
       },
     ],
   },
+  {
+    title: "ロスター発表映像",
+    clientName: "99DIVINE",
+    createdAt: "2025-08-09",
+    tags: ["動画編集"],
+    authors: ["Reku"],
+    thumbnail: roster250809,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/99divine_/status/1954106070894518684"
+      }
+    ]
+  }
 ] satisfies Work[];
