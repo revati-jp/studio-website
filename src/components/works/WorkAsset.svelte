@@ -90,7 +90,7 @@
 			await createTweetEmbed(element, tweetUrl);
 		}, TWEET_EMBED_DELAY);
 
-		return { 
+		return {
 			update(newTweetUrl: string) {
 				if (newTweetUrl !== tweetUrl) {
 					clearTimeout(timeoutId);
@@ -333,17 +333,17 @@
 				align-items: center;
 				gap: 0.75rem;
 				color: rgba(255, 255, 255, 0.6);
-				
+
 				p {
 					margin: 0;
 					font-size: 0.9rem;
 				}
-				
+
 				a {
 					color: #1da1f2;
 					text-decoration: none;
 					font-size: 0.9rem;
-					
+
 					&:hover {
 						text-decoration: underline;
 					}

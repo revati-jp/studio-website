@@ -32,7 +32,13 @@ export type Asset =
   | ExternalAsset
   | TweetAsset;
 
-export type AssetType = "video" | "image" | "music" | "website" | "external" | "tweet";
+export type AssetType =
+  | "video"
+  | "image"
+  | "music"
+  | "website"
+  | "external"
+  | "tweet";
 
 export interface VideoAsset {
   type: "video";
