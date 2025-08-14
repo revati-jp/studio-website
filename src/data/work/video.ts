@@ -321,9 +321,9 @@ export const VIDEO = [
     assets: [
       {
         type: "tweet",
-        tweetUrl: "https://x.com/99divine_/status/1954106070894518684"
-      }
-    ]
+        tweetUrl: "https://x.com/99divine_/status/1954106070894518684",
+      },
+    ],
   },
   {
     title: "ロスター発表映像",
@@ -335,8 +335,8 @@ export const VIDEO = [
     assets: [
       {
         type: "tweet",
-        tweetUrl: "https://x.com/Toxic_E_Sports/status/1956001386656612470"
-      }
-    ]
-  }
+        tweetUrl: "https://x.com/Toxic_E_Sports/status/1956001386656612470",
+      },
+    ],
+  },
 ] satisfies Work[];
