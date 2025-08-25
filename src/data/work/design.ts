@@ -279,5 +279,5 @@ export const DESIGN = [
         showInCarousel: true,
       },
     ],
-  }
+  },
 ] satisfies Work[];
