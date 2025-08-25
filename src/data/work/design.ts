@@ -16,6 +16,7 @@ import gamejam250728 from "../../assets/works/250728_gamejam.webp";
 import roster250801 from "../../assets/works/250801_annc_roster.webp";
 import roster250802 from "../../assets/works/250802_annc_roster.webp";
 import toxicHamsterHeader from "../../assets/works/250820_toxic_hamster_header.webp";
+import edIllust250816 from "../../assets/works/250816_ed_illust.webp";
 
 export const DESIGN = [
   {
@@ -260,6 +261,21 @@ export const DESIGN = [
         type: "image",
         caption: "Toxic Hamster ヘッダー",
         src: toxicHamsterHeader,
+        showInCarousel: true,
+      },
+    ],
+  },
+  {
+    title: "ED用イラスト",
+    clientName: "古雅崎藍羽",
+    createdAt: "2025-08-16",
+    tags: ["イラスト"],
+    authors: ["ぱぷと"],
+    assets: [
+      {
+        type: "image",
+        caption: "古雅崎藍羽 ED用イラスト",
+        src: edIllust250816,
         showInCarousel: true,
       },
     ],
