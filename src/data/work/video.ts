@@ -11,6 +11,7 @@ import blizzard250518 from "../../assets/works/250518_tmnl_blizzard.webp";
 import custom250726 from "../../assets/works/250726_tmnl_custom.webp";
 import roster250809 from "../../assets/works/250809_tmnl_roster.webp";
 import roster250814 from "../../assets/works/250814_tmnl_roster.webp";
+import kirinuki250830 from "../../assets/works/250830_tmnl_kirinuki.webp";
 
 export const VIDEO = [
   {
@@ -336,6 +337,20 @@ export const VIDEO = [
       {
         type: "tweet",
         tweetUrl: "https://x.com/Toxic_E_Sports/status/1956001386656612470",
+      },
+    ],
+  },
+  {
+    title: "切り抜き動画",
+    clientName: "ささかま",
+    createdAt: "2025-08-30",
+    tags: ["動画編集"],
+    authors: ["Igaue"],
+    thumbnail: kirinuki250830,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/sskmovo/status/1961760823950622740",
       },
     ],
   },
