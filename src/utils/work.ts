@@ -39,7 +39,7 @@ export function queryWorks(options?: WorkQueryOptions): WorkEntry[] {
 export interface AssetQueryOptions {
   category?: keyof WORKS;
   type?: AssetType;
-  showInCarousel?: boolean;
+  excludeHideFromCarousel?: boolean;
 }
 
 export function queryAssets(options?: AssetQueryOptions): Asset[] {
@@ -54,8 +54,9 @@ export function queryAssets(options?: AssetQueryOptions): Asset[] {
     for (const asset of work.assets) {
       if (options.type && asset.type !== options.type) continue;
       if (
-        options.showInCarousel &&
-        !(asset.type === "image" && asset.showInCarousel)
+        options.excludeHideFromCarousel &&
+        asset.type === "image" &&
+        asset.hideFromCarousel === true
       )
         continue;
 
