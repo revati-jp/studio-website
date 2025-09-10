@@ -51,7 +51,7 @@ export interface ImageAsset {
   type: "image";
   src: ImageSource;
   caption: string;
-  showInCarousel?: boolean;
+  hideFromCarousel?: boolean;
 }
 
 export interface MusicAsset {

@@ -11,7 +11,12 @@ import MusicPlayer from "../components/music/MusicPlayer.svelte";
 import { queryAssets } from "../utils";
 import type { ImageAsset } from "../types";
 
-const carouselImages = queryAssets({ showInCarousel: true }) as ImageAsset[];
+const CAROUSEL_IMAGE_LIMIT = 20;
+
+const carouselImages = queryAssets({
+  type: "image",
+  excludeHideFromCarousel: true,
+}) as ImageAsset[];
 
 // // ウィンドウの最大サイズ。ビューポートが狭くなっても、このアスペクト比を保ちながら縮小する。
 // const DRAGGABLE_WINDOW_MAX_SIZE = { width: 500, height: 276 };
@@ -32,6 +37,7 @@ const carouselImages = queryAssets({ showInCarousel: true }) as ImageAsset[];
     maxWidth="100vw"
     slideSpacing={{ desktop: "1rem", tablet: "0.7rem", mobile: "0.5rem" }}
     random
+    limit={CAROUSEL_IMAGE_LIMIT}
   >
     {
       carouselImages.map((asset) => (
