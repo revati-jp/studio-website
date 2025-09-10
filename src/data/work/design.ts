@@ -17,6 +17,12 @@ import roster250801 from "../../assets/works/250801_annc_roster.webp";
 import roster250802 from "../../assets/works/250802_annc_roster.webp";
 import toxicHamsterHeader from "../../assets/works/250820_toxic_hamster_header.webp";
 import edIllust250816 from "../../assets/works/250816_ed_illust.webp";
+import apexGD250906 from "../../assets/works/250906_annc_apex_gd.webp";
+import apexR250906 from "../../assets/works/250906_annc_apex_r.webp";
+import owGD250906 from "../../assets/works/250906_annc_ow_gd.webp";
+import owR250906 from "../../assets/works/250906_annc_ow_r.webp";
+import r6sGD250906 from "../../assets/works/250906_annc_r6s_gd.webp";
+import r6sR250906 from "../../assets/works/250906_annc_r6s_r.webp";
 
 export const DESIGN = [
   {
@@ -276,6 +282,51 @@ export const DESIGN = [
         type: "image",
         caption: "古雅崎藍羽 ED用イラスト",
         src: edIllust250816,
+        showInCarousel: true,
+      },
+    ],
+  },
+  {
+    title: "試合告知・リザルト画像",
+    clientName: "REVATI",
+    createdAt: "2025-09-06",
+    tags: ["告知画像"],
+    authors: ["rei"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI 試合告知画像 (Apex Legends)",
+        src: apexGD250906,
+        showInCarousel: true,
+      },
+      {
+        type: "image",
+        caption: "REVATI リザルト画像 (Apex Legends)",
+        src: apexR250906,
+        showInCarousel: true,
+      },
+      {
+        type: "image",
+        caption: "REVATI 試合告知画像 (Overwatch)",
+        src: owGD250906,
+        showInCarousel: true,
+      },
+      {
+        type: "image",
+        caption: "REVATI リザルト画像 (Overwatch)",
+        src: owR250906,
+        showInCarousel: true,
+      },
+      {
+        type: "image",
+        caption: "REVATI 試合告知画像 (Rainbow Six Siege)",
+        src: r6sGD250906,
+        showInCarousel: true,
+      },
+      {
+        type: "image",
+        caption: "REVATI リザルト画像 (Rainbow Six Siege)",
+        src: r6sR250906,
         showInCarousel: true,
       },
     ],
