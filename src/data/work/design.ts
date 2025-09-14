@@ -275,7 +275,7 @@ export const DESIGN = [
     clientName: "REVATI",
     createdAt: "2025-09-06",
     tags: ["告知画像"],
-    authors: ["rei"],
+    authors: ["HIKA"],
     assets: [
       {
         type: "image",
