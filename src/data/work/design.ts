@@ -23,6 +23,7 @@ import owGD250906 from "../../assets/works/250906_annc_ow_gd.webp";
 import owR250906 from "../../assets/works/250906_annc_ow_r.webp";
 import r6sGD250906 from "../../assets/works/250906_annc_r6s_gd.webp";
 import r6sR250906 from "../../assets/works/250906_annc_r6s_r.webp";
+import lucio250907 from "../../assets/works/250907_annc_lucio.webp";
 
 export const DESIGN = [
   {
@@ -305,6 +306,20 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI リザルト画像 (Rainbow Six Siege)",
         src: r6sR250906,
+      },
+    ],
+  },
+  {
+    title: "イベント キービジュアル",
+    clientName: "REVATI",
+    createdAt: "2025-09-07",
+    tags: ["デザイン"],
+    authors: ["rei"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI イベント キービジュアル",
+        src: lucio250907,
       },
     ],
   },
