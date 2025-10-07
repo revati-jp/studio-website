@@ -12,6 +12,7 @@ import custom250726 from "../../assets/works/250726_tmnl_custom.webp";
 import roster250809 from "../../assets/works/250809_tmnl_roster.webp";
 import roster250814 from "../../assets/works/250814_tmnl_roster.webp";
 import kirinuki250830 from "../../assets/works/250830_tmnl_kirinuki.webp";
+import kirinuki251004 from "../../assets/works/251004_tmnl_kirinuki.webp";
 
 export const VIDEO = [
   {
@@ -342,6 +343,20 @@ export const VIDEO = [
       {
         type: "tweet",
         tweetUrl: "https://x.com/sskmovo/status/1961760823950622740",
+      },
+    ],
+  },
+  {
+    title: "切り抜き動画",
+    clientName: "ささかま",
+    createdAt: "2025-10-04",
+    tags: ["動画編集"],
+    authors: ["Igaue"],
+    thumbnail: kirinuki251004,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/sskmovo/status/1974444398344564965",
       },
     ],
   },

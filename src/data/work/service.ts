@@ -45,4 +45,19 @@ export const SERVICE = [
     ],
     border: "3px solid #494040ff",
   },
+  {
+    title: "英語ドキュメンタリー翻訳",
+    clientName: "ObsSojourn",
+    createdAt: "2025-10-03",
+    tags: ["翻訳/通訳"],
+    authors: ["KISHI"],
+    assets: [
+      {
+        type: "video",
+        title:
+          "どのようにして13歳の神童はOverWatchの「ミスター・ワールドワイド」になったのだろう？ | TOPDRAGON",
+        src: "https://www.youtube.com/watch?v=ryLfOLm2-88",
+      },
+    ],
+  },
 ] satisfies Work[];
