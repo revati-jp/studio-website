@@ -24,6 +24,7 @@ import owR250906 from "../../assets/works/250906_annc_ow_r.webp";
 import r6sGD250906 from "../../assets/works/250906_annc_r6s_gd.webp";
 import r6sR250906 from "../../assets/works/250906_annc_r6s_r.webp";
 import lucio250907 from "../../assets/works/250907_annc_lucio.webp";
+import cover251012 from "../../assets/works/251012_tmnl_cover.webp";
 
 export const DESIGN = [
   {
@@ -320,6 +321,20 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI イベント キービジュアル",
         src: lucio250907,
+      },
+    ],
+  },
+  {
+    title: "歌ってみた　立ち絵",
+    clientName: "折紙星月",
+    createdAt: "2025-10-12",
+    tags: ["イラスト"],
+    authors: ["KAH"],
+    thumbnail: cover251012,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/Seiru_Origami/status/1977313677838807474",
       },
     ],
   },
