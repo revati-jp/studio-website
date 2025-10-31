@@ -25,6 +25,8 @@ import r6sGD250906 from "../../assets/works/250906_annc_r6s_gd.webp";
 import r6sR250906 from "../../assets/works/250906_annc_r6s_r.webp";
 import lucio250907 from "../../assets/works/250907_annc_lucio.webp";
 import cover251012 from "../../assets/works/251012_tmnl_cover.webp";
+import wny251011 from "../../assets/works/251011_annc_ow_wny.webp";
+import wny251021 from "../../assets/works/251021_annc_r6s_wny.webp";
 
 export const DESIGN = [
   {
@@ -338,4 +340,32 @@ export const DESIGN = [
       },
     ],
   },
+  {
+    title: "メンバー募集画像",
+    clientName: "REVATI",
+    createdAt: "2025-10-11",
+    tags: ["告知画像"],
+    authors: ["HIKA"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI メンバー募集画像 (Overwatch)",
+        src: wny251011,
+      }
+    ],
+  },
+  {
+    title: "メンバー募集画像",
+    clientName: "REVATI",
+    createdAt: "2025-10-21",
+    tags: ["告知画像"],
+    authors: ["HIKA"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI メンバー募集画像 (Rainbow Six Siege)",
+        src: wny251021,
+      }
+    ],
+  }
 ] satisfies Work[];
