@@ -351,7 +351,7 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI メンバー募集画像 (Overwatch)",
         src: wny251011,
-      }
+      },
     ],
   },
   {
@@ -365,7 +365,7 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI メンバー募集画像 (Rainbow Six Siege)",
         src: wny251021,
-      }
+      },
     ],
-  }
+  },
 ] satisfies Work[];

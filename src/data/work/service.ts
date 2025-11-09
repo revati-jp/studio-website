@@ -60,4 +60,19 @@ export const SERVICE = [
       },
     ],
   },
+  {
+    title: "英語ドキュメンタリー翻訳",
+    clientName: "ObsSojourn",
+    createdAt: "2025-11-04",
+    tags: ["翻訳/通訳"],
+    authors: ["KISHI"],
+    assets: [
+      {
+        type: "video",
+        title:
+          "このD.Va天才少年はいかにしてOWCSの頂点へとたどり着いたのか｜ZIYAD",
+        src: "https://www.youtube.com/watch?v=djK1Wt2NUDk",
+      },
+    ],
+  },
 ] satisfies Work[];
