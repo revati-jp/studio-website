@@ -1,21 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import licenses from "../../licenses.json";
+import type { LicenseInfo, SoftwareLicense } from "../types/licenses";
+import { OTHER_LICENSES } from "../data/OTHER_LICENSES";
 
-interface LicenseInfo {
-  licenses: string;
-  repository: string;
-  licenseText: string;
-  copyright: string;
-  [key: string]: unknown;
-}
+const libraries: SoftwareLicense[] = Object.entries(
+  licenses as Record<string, LicenseInfo>,
+).map(([id, license]) => ({
+  id,
+  license,
+}));
 
-const licenseData = Object.entries(licenses as Record<string, LicenseInfo>).map(
-  ([id, info]) => ({
-    id,
-    ...info,
-  }),
-);
+const softwares: SoftwareLicense[] = libraries.concat(OTHER_LICENSES);
 
 const TITLE = "ライセンス情報";
 ---
@@ -28,10 +24,11 @@ const TITLE = "ライセンス情報";
     </p>
     <ul>
       {
-        licenseData.map((license) => {
+        softwares.map((software) => {
+          const { license } = software;
           return (
             <li>
-              <h2>{license.id}</h2>
+              <h2>{software.id}</h2>
               <dl>
                 {license.repository !== "" ? (
                   <>
