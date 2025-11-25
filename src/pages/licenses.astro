@@ -1,34 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import licenses from "../../licenses.json";
-import fs from "fs";
-import path from "path";
+import type { LicenseInfo, SoftwareLicense } from "../types/licenses";
+import { OTHER_LICENSES } from "../data/OTHER_LICENSES";
 
-type LicenseInfo = {
-  licenses: string;
-  repository?: string;
-  publisher?: string;
-  licenseFile?: string;
-  [key: string]: unknown;
-};
+const libraries: SoftwareLicense[] = Object.entries(
+  licenses as Record<string, LicenseInfo>,
+).map(([id, license]) => ({
+  id,
+  license,
+}));
 
-const licenseData = Object.entries(licenses as Record<string, LicenseInfo>).map(
-  ([id, info]) => ({
-    id,
-    ...info,
-  }),
-);
-
-function readLicenseText(licenseFile: string | undefined) {
-  if (typeof licenseFile !== "string") return null;
-  try {
-    const licensePath = path.resolve(process.cwd(), licenseFile);
-    return fs.readFileSync(licensePath, "utf-8");
-  } catch (error) {
-    console.error(`Failed to read license file: ${licenseFile}`, error);
-    return "ライセンスファイルの読み込みに失敗しました。";
-  }
-}
+const softwares: SoftwareLicense[] = libraries.concat(OTHER_LICENSES);
 
 const TITLE = "ライセンス情報";
 ---
@@ -41,13 +24,13 @@ const TITLE = "ライセンス情報";
     </p>
     <ul>
       {
-        licenseData.map((license) => {
-          const licenseText = readLicenseText(license.licenseFile);
+        softwares.map((software) => {
+          const { license } = software;
           return (
             <li>
-              <h2>{license.id}</h2>
+              <h2>{software.id}</h2>
               <dl>
-                {typeof license.repository === "string" ? (
+                {license.repository !== null ? (
                   <>
                     <dt>Repository</dt>
                     <dd>
@@ -63,21 +46,27 @@ const TITLE = "ライセンス情報";
                 ) : (
                   ""
                 )}
-                {license.publisher ? (
+                {license.copyright !== null ? (
                   <>
-                    <dt>Publisher</dt>
-                    <dd>{license.publisher}</dd>
+                    <dt>Copyright</dt>
+                    <dd>{license.copyright}</dd>
                   </>
                 ) : (
                   ""
                 )}
-                <dt>License</dt>
-                <dd>{license.licenses}</dd>
+                {license.licenses !== null ? (
+                  <>
+                    <dt>License</dt>
+                    <dd>{license.licenses}</dd>
+                  </>
+                ) : (
+                  ""
+                )}
               </dl>
-              {licenseText !== null ? (
+              {license.licenseText !== null ? (
                 <details>
                   <summary>ライセンス本文</summary>
-                  <pre>{licenseText}</pre>
+                  <pre>{license.licenseText}</pre>
                 </details>
               ) : (
                 ""
@@ -116,6 +105,7 @@ const TITLE = "ライセンス情報";
     max-width: 100%;
     margin-block: 24px;
     padding: 20px;
+    padding-bottom: 26px;
     background: $color-secondary;
     box-shadow:
       5px 5px 17px #0b0a0a,
@@ -187,6 +177,7 @@ const TITLE = "ライセンス情報";
     li {
       margin-block: 20px;
       padding: 14px;
+      padding-bottom: 16px;
       box-shadow:
         4px 4px 11px #100d0d,
         -4px -4px 11px #3e3535;
