@@ -1,8 +1,8 @@
 export interface LicenseInfo {
-  licenses: string;
-  repository: string;
-  licenseText: string;
-  copyright: string;
+  licenses: string | null;
+  repository: string | null;
+  licenseText: string | null;
+  copyright: string | null;
   [key: string]: unknown;
 }
 

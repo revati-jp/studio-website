@@ -30,7 +30,7 @@ const TITLE = "ライセンス情報";
             <li>
               <h2>{software.id}</h2>
               <dl>
-                {license.repository !== "" ? (
+                {license.repository !== null ? (
                   <>
                     <dt>Repository</dt>
                     <dd>
@@ -46,7 +46,7 @@ const TITLE = "ライセンス情報";
                 ) : (
                   ""
                 )}
-                {license.copyright !== "" ? (
+                {license.copyright !== null ? (
                   <>
                     <dt>Copyright</dt>
                     <dd>{license.copyright}</dd>
@@ -54,10 +54,16 @@ const TITLE = "ライセンス情報";
                 ) : (
                   ""
                 )}
-                <dt>License</dt>
-                <dd>{license.licenses}</dd>
+                {license.licenses !== null ? (
+                  <>
+                    <dt>License</dt>
+                    <dd>{license.licenses}</dd>
+                  </>
+                ) : (
+                  ""
+                )}
               </dl>
-              {license.licenseText !== "" ? (
+              {license.licenseText !== null ? (
                 <details>
                   <summary>ライセンス本文</summary>
                   <pre>{license.licenseText}</pre>
@@ -99,6 +105,7 @@ const TITLE = "ライセンス情報";
     max-width: 100%;
     margin-block: 24px;
     padding: 20px;
+    padding-bottom: 26px;
     background: $color-secondary;
     box-shadow:
       5px 5px 17px #0b0a0a,
@@ -170,6 +177,7 @@ const TITLE = "ライセンス情報";
     li {
       margin-block: 20px;
       padding: 14px;
+      padding-bottom: 16px;
       box-shadow:
         4px 4px 11px #100d0d,
         -4px -4px 11px #3e3535;
