@@ -1,16 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import licenses from "../../licenses.json";
-import fs from "fs";
-import path from "path";
 
-type LicenseInfo = {
+interface LicenseInfo {
   licenses: string;
-  repository?: string;
-  publisher?: string;
-  licenseFile?: string;
+  repository: string;
+  licenseText: string;
+  copyright: string;
   [key: string]: unknown;
-};
+}
 
 const licenseData = Object.entries(licenses as Record<string, LicenseInfo>).map(
   ([id, info]) => ({
@@ -18,17 +16,6 @@ const licenseData = Object.entries(licenses as Record<string, LicenseInfo>).map(
     ...info,
   }),
 );
-
-function readLicenseText(licenseFile: string | undefined) {
-  if (typeof licenseFile !== "string") return null;
-  try {
-    const licensePath = path.resolve(process.cwd(), licenseFile);
-    return fs.readFileSync(licensePath, "utf-8");
-  } catch (error) {
-    console.error(`Failed to read license file: ${licenseFile}`, error);
-    return "ライセンスファイルの読み込みに失敗しました。";
-  }
-}
 
 const TITLE = "ライセンス情報";
 ---
@@ -42,12 +29,11 @@ const TITLE = "ライセンス情報";
     <ul>
       {
         licenseData.map((license) => {
-          const licenseText = readLicenseText(license.licenseFile);
           return (
             <li>
               <h2>{license.id}</h2>
               <dl>
-                {typeof license.repository === "string" ? (
+                {license.repository !== "" ? (
                   <>
                     <dt>Repository</dt>
                     <dd>
@@ -63,10 +49,10 @@ const TITLE = "ライセンス情報";
                 ) : (
                   ""
                 )}
-                {license.publisher ? (
+                {license.copyright !== "" ? (
                   <>
-                    <dt>Publisher</dt>
-                    <dd>{license.publisher}</dd>
+                    <dt>Copyright</dt>
+                    <dd>{license.copyright}</dd>
                   </>
                 ) : (
                   ""
@@ -74,10 +60,10 @@ const TITLE = "ライセンス情報";
                 <dt>License</dt>
                 <dd>{license.licenses}</dd>
               </dl>
-              {licenseText !== null ? (
+              {license.licenseText !== "" ? (
                 <details>
                   <summary>ライセンス本文</summary>
-                  <pre>{licenseText}</pre>
+                  <pre>{license.licenseText}</pre>
                 </details>
               ) : (
                 ""
