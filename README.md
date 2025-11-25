@@ -71,12 +71,22 @@ The full license text is available in the [`LICENSE`](./LICENSE) file.
 
 ### Scope of the License
 
-The BSD 3-Clause License applies only to the source code (e.g., `*.astro`, `*.svelte`, `*.scss`, `*.ts` files) created to power the website.
+The BSD 3-Clause License applies to the software source code (e.g., `*.astro`, `*.svelte`, `*.scss`, `*.ts` files) created by REVATI Studio.
 
-It **explicitly excludes**:
+It **does not apply** to the following:
+
+#### 1. REVATI Studio Proprietary Assets
 
 - All trademarks, service marks, and logos associated with REVATI Studio.
-- All content published on the website, including text, images, audios, videos, 3D models, and other media.
+- All original content created by REVATI Studio, including text, images, audio, video, 3D models, and other media.
 
-These materials are proprietary and are copyrighted by REVATI Studio.
-All rights are reserved. You are not granted any rights to use them.
+All rights to these materials are reserved by REVATI Studio and are not granted under the BSD license.
+
+#### 2. Third-Party Assets
+
+- Fonts (e.g., Noto Sans CJK, Special Gothic, Montserrat).
+- Icons (e.g., Bootstrap Icons, Lucide).
+- Other third-party libraries and assets.
+
+These assets are subject to their respective licenses.
+Please refer to the [Licenses page](https://studio.revati.jp/licenses) for details.
