@@ -20,8 +20,9 @@ const carouselImages = queryAssets({
   excludeHideFromCarousel: true,
 }) as ImageAsset[];
 
-// サムネイル画像の最適化
-const THUMBNAIL_WIDTH = 600;
+// サムネイル画像 (352.5 * 198.283) の最適化
+const THUMBNAIL_WIDTH = 441; // 352.5 * 1.25 = 440.625
+const THUMBNAIL_HEIGHT = 248; // 198.283 * 1.25 = 247.85375
 
 function isImageMetadata(src: ImageSource): src is ImageMetadata {
   return (
@@ -43,6 +44,9 @@ for (const work of allWorks) {
       const optimized = await getImage({
         src: imageSrc,
         width: THUMBNAIL_WIDTH,
+        height: THUMBNAIL_HEIGHT,
+        // 範囲を完全に埋めるように拡大縮小し、トリミングまで行う
+        fit: "cover",
         format: "webp",
       });
       thumbnailUrlMap[workId] = optimized.src;
