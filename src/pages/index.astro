@@ -24,6 +24,9 @@ const carouselImages = queryAssets({
 const THUMBNAIL_WIDTH = 441; // 352.5 * 1.25 = 440.625
 const THUMBNAIL_HEIGHT = 248; // 198.283 * 1.25 = 247.85375
 
+// カルーセル画像の最適化 (デスクトップ: 45vh ≈ 486px)
+const CAROUSEL_HEIGHT = 729; // 486 * 1.5 = 729
+
 function isImageMetadata(src: ImageSource): src is ImageMetadata {
   return (
     typeof src !== "string" && "src" in src && "width" in src && "height" in src
@@ -79,15 +82,35 @@ for (const work of allWorks) {
     limit={CAROUSEL_IMAGE_LIMIT}
   >
     {
-      carouselImages.map((asset) => (
-        <CarouselItem>
-          {typeof asset.src === "string" ? (
-            <Image src={asset.src} alt={asset.caption} inferSize />
-          ) : (
-            <Image src={asset.src} alt={asset.caption} />
-          )}
-        </CarouselItem>
-      ))
+      await Promise.all(
+        carouselImages.map(async (asset) => {
+          if (typeof asset.src === "string") {
+            return (
+              <CarouselItem>
+                <Image src={asset.src} alt={asset.caption} inferSize />
+              </CarouselItem>
+            );
+          }
+          // ImageMetadataの場合は最適化
+          const optimized = await getImage({
+            src: asset.src,
+            height: CAROUSEL_HEIGHT,
+            format: "webp",
+          });
+          return (
+            <CarouselItem>
+              <img
+                src={optimized.src}
+                alt={asset.caption}
+                width={optimized.attributes.width}
+                height={optimized.attributes.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </CarouselItem>
+          );
+        }),
+      )
     }
   </Carousel>
 
