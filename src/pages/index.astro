@@ -20,12 +20,14 @@ const carouselImages = queryAssets({
   excludeHideFromCarousel: true,
 }) as ImageAsset[];
 
-// サムネイル画像 の最適化（一列時最大: 426.000 * 239.633）
-const THUMBNAIL_WIDTH = 586;  // 426.000 * 1.375 = 585.750000
+// サムネイル画像 の最適化（一列時最大: 426.000 * 239.633 px）
+const THUMBNAIL_WIDTH = 586; //  426.000 * 1.375 = 585.750000
 const THUMBNAIL_HEIGHT = 330; // 239.633 * 1.375 = 329.495375
 
-// カルーセル画像の最適化 (13-inch iPad Pro M4: 45vh ≈ 412px)
-const CAROUSEL_HEIGHT = 618; // 412 * 1.5 = 618
+// カルーセル画像の最適化（縦置き 1080p FHD での高さ: ~568px)
+const CAROUSEL_HEIGHT = 568; // 568 * 1 = 568
+// モバイル向けカルーセル画像の最適化 (iPhone 17 Pro Max での高さ: ~202.317px)
+const CAROUSEL_HEIGHT_MOBILE = 278; // 202.317 * 1.375 = 278.185875
 
 function isImageMetadata(src: ImageSource): src is ImageMetadata {
   return (
@@ -91,22 +93,36 @@ for (const work of allWorks) {
               </CarouselItem>
             );
           }
-          // ImageMetadataの場合は最適化
-          const optimized = await getImage({
-            src: asset.src,
-            height: CAROUSEL_HEIGHT,
-            format: "webp",
-          });
+          // ImageMetadataの場合は最適化（デスクトップ・モバイル両方を生成）
+          const [optimized, optimizedMobile] = await Promise.all([
+            getImage({
+              src: asset.src,
+              height: CAROUSEL_HEIGHT,
+              format: "webp",
+            }),
+            getImage({
+              src: asset.src,
+              height: CAROUSEL_HEIGHT_MOBILE,
+              format: "webp",
+            }),
+          ]);
           return (
             <CarouselItem>
-              <img
-                src={optimized.src}
-                alt={asset.caption}
-                width={optimized.attributes.width}
-                height={optimized.attributes.height}
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                {/* (iPhone 17 Pro Max の幅 + iPad Mini の幅)/2 = 604px */}
+                <source
+                  srcset={optimizedMobile.src}
+                  media="(max-width: 604px)"
+                />
+                <img
+                  src={optimized.src}
+                  alt={asset.caption}
+                  width={optimized.attributes.width}
+                  height={optimized.attributes.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </CarouselItem>
           );
         }),
