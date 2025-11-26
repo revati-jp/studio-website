@@ -1,13 +1,15 @@
 <script lang="ts">
 	import type { Work } from '../../types';
+	import { getWorkId } from '../../utils';
 	import WorkCard from './WorkCard.svelte';
 
 	interface Props {
 		works: Work[];
 		onWorkClick: (work: Work) => void;
+		thumbnailUrlMap?: Record<string, string>;
 	}
 
-	let { works, onWorkClick }: Props = $props();
+	let { works, onWorkClick, thumbnailUrlMap = {} }: Props = $props();
 
 	const isEmpty = $derived(works.length === 0);
 </script>
@@ -22,8 +24,12 @@
 	</div>
 {:else}
 	<div class="works-grid">
-		{#each works as work, index (work.title + '-' + work.createdAt + '-' + index)}
-			<WorkCard {work} onClick={onWorkClick} />
+		{#each works as work, index (getWorkId(work) + '-' + index)}
+			<WorkCard
+				{work}
+				onClick={onWorkClick}
+				optimizedThumbnailUrl={thumbnailUrlMap[getWorkId(work)]}
+			/>
 		{/each}
 	</div>
 {/if}

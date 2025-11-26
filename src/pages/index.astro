@@ -1,5 +1,6 @@
 ---
-import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Spacer from "../components/Spacer.astro";
 import Carousel from "../components/Carousel.astro";
@@ -8,8 +9,9 @@ import WorksContainer from "../components/works/WorksContainer.svelte";
 // import DraggableWindow from "../components/DraggableWindow.astro";
 // import Logo3d from "../components/Logo3d.svelte";
 import MusicPlayer from "../components/music/MusicPlayer.svelte";
-import { queryAssets } from "../utils";
-import type { ImageAsset } from "../types";
+import { queryAssets, getWorkId, getThumbnailSource } from "../utils";
+import type { ImageAsset, Work, ImageSource } from "../types";
+import { WORKS } from "../data";
 
 const CAROUSEL_IMAGE_LIMIT = 20;
 
@@ -17,6 +19,39 @@ const carouselImages = queryAssets({
   type: "image",
   excludeHideFromCarousel: true,
 }) as ImageAsset[];
+
+// サムネイル画像の最適化
+const THUMBNAIL_WIDTH = 600;
+
+function isImageMetadata(src: ImageSource): src is ImageMetadata {
+  return (
+    typeof src !== "string" && "src" in src && "width" in src && "height" in src
+  );
+}
+
+// 全Workからサムネイル画像を収集し、最適化済みURLを生成
+const allWorks: Work[] = Object.values(WORKS).flat();
+const thumbnailUrlMap: Record<string, string> = {};
+
+for (const work of allWorks) {
+  const workId = getWorkId(work);
+  const imageSrc = getThumbnailSource(work);
+
+  // ImageMetadataの場合のみ最適化
+  if (imageSrc && isImageMetadata(imageSrc)) {
+    try {
+      const optimized = await getImage({
+        src: imageSrc,
+        width: THUMBNAIL_WIDTH,
+        format: "webp",
+      });
+      thumbnailUrlMap[workId] = optimized.src;
+    } catch {
+      // 最適化に失敗した場合は元の画像を使用
+      thumbnailUrlMap[workId] = imageSrc.src;
+    }
+  }
+}
 
 // // ウィンドウの最大サイズ。ビューポートが狭くなっても、このアスペクト比を保ちながら縮小する。
 // const DRAGGABLE_WINDOW_MAX_SIZE = { width: 500, height: 276 };
@@ -56,7 +91,7 @@ const carouselImages = queryAssets({
 
   <h1>Our Works</h1>
 
-  <WorksContainer client:load />
+  <WorksContainer client:load {thumbnailUrlMap} />
 
   <!-- <DraggableWindow
     title="REVATI Studio"
