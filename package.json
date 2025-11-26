@@ -33,6 +33,7 @@
     "@astrojs/svelte": "^7.1.0",
     "@fontsource/montserrat": "^5.2.8",
     "@fontsource/noto-sans-jp": "^5.2.8",
+    "@fontsource/special-gothic-expanded-one": "^5.2.3",
     "@threlte/core": "^8.0.4",
     "@threlte/extras": "^9.2.1",
     "astro": "^5.13.3",
