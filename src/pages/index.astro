@@ -20,9 +20,9 @@ const carouselImages = queryAssets({
   excludeHideFromCarousel: true,
 }) as ImageAsset[];
 
-// サムネイル画像 (352.5 * 198.283) の最適化
-const THUMBNAIL_WIDTH = 441; // 352.5 * 1.25 = 440.625
-const THUMBNAIL_HEIGHT = 248; // 198.283 * 1.25 = 247.85375
+// サムネイル画像 の最適化（一列時最大: 426.000 * 239.633）
+const THUMBNAIL_WIDTH = 586;  // 426.000 * 1.375 = 585.750000
+const THUMBNAIL_HEIGHT = 330; // 239.633 * 1.375 = 329.495375
 
 // カルーセル画像の最適化 (13-inch iPad Pro M4: 45vh ≈ 412px)
 const CAROUSEL_HEIGHT = 618; // 412 * 1.5 = 618
