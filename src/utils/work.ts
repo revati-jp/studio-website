@@ -8,16 +8,12 @@ import type {
   IconImage,
 } from "../types";
 
-/**
- * Work IDを生成する関数
- */
+/** Work IDを生成する関数 */
 export function getWorkId(work: Work): string {
   return `${work.title}_${work.createdAt}`;
 }
 
-/**
- * IconImageかどうかを判定する型ガード
- */
+/** IconImageかどうかを判定する型ガード */
 export function isIconImage(img: unknown): img is IconImage {
   return (
     img !== null &&
@@ -29,25 +25,25 @@ export function isIconImage(img: unknown): img is IconImage {
 
 /**
  * Workオブジェクトからサムネイル画像のソースを特定する関数
+ *
  * IconImageの場合はnullを返す（最適化対象外）
  */
 export function getThumbnailSource(work: Work): ImageSource | null {
-  if ("thumbnail" in work && work.thumbnail) {
-    if (isIconImage(work.thumbnail)) {
-      return null;
-    }
+  if ("thumbnail" in work && work.thumbnail !== undefined) {
+    if (isIconImage(work.thumbnail)) return null;
     return work.thumbnail;
   }
 
   const firstAsset = work.assets[0];
-  if (firstAsset && "thumbnail" in firstAsset && firstAsset.thumbnail) {
+  if (
+    firstAsset &&
+    "thumbnail" in firstAsset &&
+    firstAsset.thumbnail !== undefined
+  )
     return firstAsset.thumbnail;
-  }
 
   const imageAsset = work.assets.find((asset) => asset.type === "image");
-  if (imageAsset && imageAsset.type === "image") {
-    return imageAsset.src;
-  }
+  if (imageAsset && imageAsset.type === "image") return imageAsset.src;
 
   return null;
 }

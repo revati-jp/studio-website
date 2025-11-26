@@ -39,7 +39,7 @@ for (const work of allWorks) {
   const imageSrc = getThumbnailSource(work);
 
   // ImageMetadataの場合のみ最適化
-  if (imageSrc && isImageMetadata(imageSrc)) {
+  if (imageSrc !== null && isImageMetadata(imageSrc)) {
     try {
       const optimized = await getImage({
         src: imageSrc,
