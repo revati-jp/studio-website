@@ -19,6 +19,9 @@ const fullTitle = `${WEBSITE_TITLE} | ${title}`;
 const DESCRIPTION = "あらゆるクリエイティブをワンストップで。";
 const canonicalUrl = WEBSITE_URL + Astro.url.pathname;
 
+// インラインで記述すると TypeScript の警告が出るため変数を経由
+const fontLoadHandler = "this.media='all'";
+
 const specialGothicTexts = [...new Set(`${TITLE}${SUBTITLE}`.split(""))].join(
   "",
 );
@@ -65,16 +68,22 @@ Web 開発だけでなく、Discord ボットやソフトウェア開発など�
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload={fontLoadHandler}
     />
     <!-- Special Gothic Expanded One, about title -->
     <link
       href={`https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap&text=${specialGothicTexts}`}
       rel="stylesheet"
+      media="print"
+      onload={fontLoadHandler}
     />
     <!-- Montserrat (English) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap"
       rel="stylesheet"
+      media="print"
+      onload={fontLoadHandler}
     />
     <!-- ▲ Google Fonts ▲ -->
 
