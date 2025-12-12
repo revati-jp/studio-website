@@ -27,6 +27,8 @@ const THUMBNAIL_HEIGHT = 330; // 239.633 * 1.375 = 329.495375
 // カルーセル画像の最適化（縦置き 1080p FHD での高さ: ~568px)
 const CAROUSEL_HEIGHT = 568; // 568 * 1 = 568
 // モバイル向けカルーセル画像の最適化 (iPhone 17 Pro Max での高さ: ~202.317px)
+// * 係数 `1.375` は、当該デバイスの Retina ディスプレイ等向けの、妥協としての最低限の解像度補正です。
+//   これは、2x や 3x などの完全な DPI に合わせたものではありません。
 const CAROUSEL_HEIGHT_MOBILE = 278; // 202.317 * 1.375 = 278.185875
 
 function isImageMetadata(src: ImageSource): src is ImageMetadata {
