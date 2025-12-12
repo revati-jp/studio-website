@@ -57,8 +57,9 @@ for (const work of allWorks) {
         format: "webp",
       });
       thumbnailUrlMap[workId] = optimized.src;
-    } catch {
+    } catch (error) {
       // 最適化に失敗した場合は元の画像を使用
+      console.error(`Image optimization failed for workId "${workId}" with source "${imageSrc?.src}":`, error);
       thumbnailUrlMap[workId] = imageSrc.src;
     }
   }
