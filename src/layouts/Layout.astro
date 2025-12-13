@@ -4,9 +4,15 @@ import { ClientRouter } from "astro:transitions";
 import Header from "../components/header/Header.astro";
 import Footer from "../components/footer/Footer.astro";
 import FixedLinks from "../components/FixedLinks.astro";
-import { TITLE, SUBTITLE } from "../pages/about.astro";
 
 import studioHeaderImage from "../assets/Revati-Studio_header_orange.png";
+
+import "@fontsource/noto-sans-jp/400.css";
+import "@fontsource/noto-sans-jp/500.css";
+import "@fontsource/noto-sans-jp/900.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/800.css";
+import "@fontsource/special-gothic-expanded-one";
 
 interface Props {
   title: string;
@@ -18,10 +24,6 @@ const absThumbnailPath = WEBSITE_URL + studioHeaderImage.src;
 const fullTitle = `${WEBSITE_TITLE} | ${title}`;
 const DESCRIPTION = "あらゆるクリエイティブをワンストップで。";
 const canonicalUrl = WEBSITE_URL + Astro.url.pathname;
-
-const specialGothicTexts = [...new Set(`${TITLE}${SUBTITLE}`.split(""))].join(
-  "",
-);
 ---
 
 <!--
@@ -57,26 +59,6 @@ Web 開発だけでなく、Discord ボットやソフトウェア開発など�
       name="google-site-verification"
       content="Y2_5HsUC4aF517HYkAql5TlhdGr3d9yRpO3VKu9uBFw"
     />
-
-    <!-- ▼ Google Fonts ▼ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <!-- Noto Sans JP, default -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Special Gothic Expanded One, about title -->
-    <link
-      href={`https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap&text=${specialGothicTexts}`}
-      rel="stylesheet"
-    />
-    <!-- Montserrat (English) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- ▲ Google Fonts ▲ -->
 
     <meta property="og:site_name" content={WEBSITE_TITLE} />
     <meta property="og:locale" content="ja_JP" />

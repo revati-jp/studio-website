@@ -1,5 +1,6 @@
 import type { Work } from "../../types";
 
+import revHeader240401 from "../../assets/works/240401_REVATI-header.jpg";
 import ow250511 from "../../assets/works/250511_annc_ow.webp";
 import welcome250518 from "../../assets/works/250518_annc_welcome.webp";
 import studioHeader1 from "../../assets/works/250724_studio_header1.webp";
@@ -39,7 +40,7 @@ export const DESIGN = [
       {
         type: "image",
         caption: "REVATI ヘッダー",
-        src: "https://revati.jp/images/logos/revati/header_mini_oxipng.png",
+        src: revHeader240401,
       },
     ],
   },
