@@ -147,8 +147,8 @@ export const MUSIC = [
       {
         type: "video",
         title: "ともに / WANIMA 歌ってみた　N@RU",
-        src: "https://www.youtube.com/watch?v=6CWoZaNmKW0"
-      }
-    ]
-  }
+        src: "https://www.youtube.com/watch?v=6CWoZaNmKW0",
+      },
+    ],
+  },
 ] satisfies Work[];
