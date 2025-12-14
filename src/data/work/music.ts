@@ -137,4 +137,18 @@ export const MUSIC = [
       },
     ],
   },
+  {
+    title: "インスト制作",
+    clientName: "N@RU",
+    createdAt: "2025-11-29",
+    tags: ["音源制作"],
+    authors: ["くりす"],
+    assets: [
+      {
+        type: "video",
+        title: "ともに / WANIMA 歌ってみた　N@RU",
+        src: "https://www.youtube.com/watch?v=6CWoZaNmKW0"
+      }
+    ]
+  }
 ] satisfies Work[];
