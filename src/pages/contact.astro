@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactContent from "../components/contact/ContactContent.svelte";
+import MusicPlayer from "../components/music/MusicPlayer.svelte";
 ---
 
 <Layout title="CONTACT">
@@ -9,6 +10,8 @@ import ContactContent from "../components/contact/ContactContent.svelte";
     <p>ご要件に合わせて下記よりお問い合わせください。</p>
     <ContactContent client:load />
   </div>
+
+  <MusicPlayer client:load transition:name="music-player" transition:persist />
 </Layout>
 
 <style lang="scss">

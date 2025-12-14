@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import MusicPlayer from "../components/music/MusicPlayer.svelte";
 import licenses from "../../licenses.json";
 import type { LicenseInfo, SoftwareLicense } from "../types/licenses";
 import { OTHER_LICENSES } from "../data/OTHER_LICENSES";
@@ -77,6 +78,8 @@ const TITLE = "ライセンス情報";
       }
     </ul>
   </div>
+
+  <MusicPlayer client:load transition:name="music-player" transition:persist />
 </Layout>
 
 <style lang="scss">

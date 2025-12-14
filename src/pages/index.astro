@@ -59,7 +59,10 @@ for (const work of allWorks) {
       thumbnailUrlMap[workId] = optimized.src;
     } catch (error) {
       // 最適化に失敗した場合は元の画像を使用
-      console.error(`Image optimization failed for workId "${workId}" with source "${imageSrc?.src}":`, error);
+      console.error(
+        `Image optimization failed for workId "${workId}" with source "${imageSrc?.src}":`,
+        error,
+      );
       thumbnailUrlMap[workId] = imageSrc.src;
     }
   }
@@ -147,7 +150,7 @@ for (const work of allWorks) {
     <Logo3d client:only="svelte" />
   </DraggableWindow> -->
 
-  <MusicPlayer client:load />
+  <MusicPlayer client:load transition:name="music-player" transition:persist />
 </Layout>
 
 <style lang="scss">
