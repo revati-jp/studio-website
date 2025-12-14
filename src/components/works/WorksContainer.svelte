@@ -10,6 +10,12 @@
 
 	type TabType = 'all' | keyof WORKS;
 
+	interface Props {
+		thumbnailUrlMap?: Record<string, string>;
+	}
+
+	let { thumbnailUrlMap = {} }: Props = $props();
+
 	const TAB_ORDER: TabType[] = ['all', 'video', 'music', 'design', 'service'];
 
 	let activeTab = $state<TabType>('all');
@@ -151,7 +157,7 @@
 				in:fly={{ x: slideDirection, duration: 200, delay: 100 }}
 				out:fly={{ x: -slideDirection, duration: 150 }}
 			>
-				<WorksList works={filteredWorks} onWorkClick={handleWorkClick} />
+				<WorksList works={filteredWorks} onWorkClick={handleWorkClick} {thumbnailUrlMap} />
 			</div>
 		{/key}
 	</div>

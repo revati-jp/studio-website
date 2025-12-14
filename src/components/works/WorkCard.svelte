@@ -1,21 +1,40 @@
 <script lang="ts">
-	import type { Work, IconImage } from '../../types';
-	import { extractYouTubeVideoId, getYouTubeThumbnail } from '../../utils';
+	import type { Work } from '../../types';
+	import { extractYouTubeVideoId, getYouTubeThumbnail, isIconImage } from '../../utils';
 
 	interface Props {
 		work: Work;
 		onClick: (work: Work) => void;
+		optimizedThumbnailUrl?: string;
 	}
 
-	let { work, onClick }: Props = $props();
+	let { work, onClick, optimizedThumbnailUrl }: Props = $props();
 
-	function isIconImage(img: any): img is IconImage {
-		return img && typeof img === 'object' && 'icon' in img && 'backgroundColor' in img;
+	interface ThumbnailInfo {
+		src: string;
+		isIcon: boolean;
+		backgroundColor: string | null;
+		width: string | null;
+		height: string | null;
+		isMusicWork: boolean;
 	}
 
-	function getThumbnailInfo(work: Work) {
+	function getThumbnailInfo(work: Work): ThumbnailInfo {
 		const isMusicWork = work.assets.some((asset) => asset.type === 'music');
 
+		// 1. 最適化済みURLがあれば最優先で使用（IconImage以外の場合）
+		if (optimizedThumbnailUrl) {
+			return {
+				src: optimizedThumbnailUrl,
+				isIcon: false,
+				backgroundColor: null,
+				width: null,
+				height: null,
+				isMusicWork
+			};
+		}
+
+		// 2. 最適化済みURLがない場合、既存のロジックでフォールバック
 		if (work.thumbnail) {
 			if (isIconImage(work.thumbnail)) {
 				return {

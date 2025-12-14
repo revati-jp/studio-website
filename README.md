@@ -24,16 +24,16 @@
 
 1. 依存関係をインストールする
    ```bash
-   npm install
+   pnpm install
    ```
 1. 開発サーバーを起動する
 
    ```bash
-   # 開発サーバーを起動する前に、`licenses.json` を生成する（`npm run build` では自動で実行される）
-   npm run licenses
+   # 開発サーバーを起動する前に、`licenses.json` を生成する（`pnpm run build` では自動で実行される）
+   pnpm run licenses
 
    # 起動する
-   npm run dev
+   pnpm run dev
    ```
 
 ## 使用技術
@@ -43,26 +43,26 @@
 - 3D グラフィックス: [Three.js](https://threejs.org) + [Threlte](https://threlte.xyz/)
 - スタイルシート: [Sass](https://sass-lang.com) (SCSS)
 - 開発ツール:
-  - [npm](https://npmjs.com)
+  - [pnpm](https://pnpm.io)
   - [TypeScript](https://typescriptlang.org)
   - [Prettier](https://prettier.io)
   - [ESLint](https://eslint.org)
 
-## npm コマンド
+## pnpm コマンド
 
-環境構築や開発には以下の npm コマンドを使用する。
+環境構築や開発には以下の pnpm コマンドを使用する。(`pnpm dev`のように省略することも可能)
 
-| コマンド            | 説明                                                                                          |
-| :------------------ | :-------------------------------------------------------------------------------------------- |
-| `npm run dev`       | 開発サーバーを起動 (`localhost:4321`)                                                         |
-| `npm run build`     | プロダクション用にプロジェクトを `./dist/` にビルド                                           |
-| `npm run preview`   | ビルドされたサイトをローカルでプレビュー                                                      |
-| `npm run licenses`  | `licenses.json` を生成                                                                        |
-| `npm run fmt`       | Prettier を使用してコードをフォーマット                                                       |
-| `npm run check`     | エラーをチェック                                                                              |
-| `npm run lnt`       | ESLint を使用してコードを検査                                                                 |
-| `npm run lnt:fix`   | ESLint を使用してコードを自動修正                                                             |
-| `npm run astro ...` | `astro add` などの [CLI コマンド](https://docs.astro.build/ja/reference/cli-reference/)を実行 |
+| コマンド             | 説明                                                                                          |
+| :------------------- | :-------------------------------------------------------------------------------------------- |
+| `pnpm run dev`       | 開発サーバーを起動 (`localhost:4321`)                                                         |
+| `pnpm run build`     | プロダクション用にプロジェクトを `./dist/` にビルド                                           |
+| `pnpm run preview`   | ビルドされたサイトをローカルでプレビュー                                                      |
+| `pnpm run licenses`  | `licenses.json` を生成                                                                        |
+| `pnpm run fmt`       | Prettier を使用してコードをフォーマット                                                       |
+| `pnpm run check`     | エラーをチェック                                                                              |
+| `pnpm run lnt`       | ESLint を使用してコードを検査                                                                 |
+| `pnpm run lnt:fix`   | ESLint を使用してコードを自動修正                                                             |
+| `pnpm run astro ...` | `astro add` などの [CLI コマンド](https://docs.astro.build/ja/reference/cli-reference/)を実行 |
 
 ## License
 

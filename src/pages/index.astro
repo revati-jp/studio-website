@@ -1,5 +1,6 @@
 ---
-import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Spacer from "../components/Spacer.astro";
 import Carousel from "../components/Carousel.astro";
@@ -8,8 +9,9 @@ import WorksContainer from "../components/works/WorksContainer.svelte";
 // import DraggableWindow from "../components/DraggableWindow.astro";
 // import Logo3d from "../components/Logo3d.svelte";
 import MusicPlayer from "../components/music/MusicPlayer.svelte";
-import { queryAssets } from "../utils";
-import type { ImageAsset } from "../types";
+import { queryAssets, getWorkId, getThumbnailSource } from "../utils";
+import type { ImageAsset, Work, ImageSource } from "../types";
+import { WORKS } from "../data";
 
 const CAROUSEL_IMAGE_LIMIT = 20;
 
@@ -17,6 +19,54 @@ const carouselImages = queryAssets({
   type: "image",
   excludeHideFromCarousel: true,
 }) as ImageAsset[];
+
+// サムネイル画像の最適化（一列時最大: 426.000 * 239.633 px）
+const THUMBNAIL_WIDTH = 586; //  426.000 * 1.375 = 585.750000
+const THUMBNAIL_HEIGHT = 330; // 239.633 * 1.375 = 329.495375
+
+// カルーセル画像の最適化（縦置き 1080p FHD での高さ: ~568px)
+const CAROUSEL_HEIGHT = 568; // 568 * 1 = 568
+// モバイル向けカルーセル画像の最適化 (iPhone 17 Pro Max での高さ: ~202.317px)
+// * 係数 `1.375` は、当該デバイスの Retina ディスプレイ等向けの、妥協としての最低限の解像度補正です。
+//   これは、2x や 3x などの完全な DPI に合わせたものではありません。
+const CAROUSEL_HEIGHT_MOBILE = 278; // 202.317 * 1.375 = 278.185875
+
+function isImageMetadata(src: ImageSource): src is ImageMetadata {
+  return (
+    typeof src !== "string" && "src" in src && "width" in src && "height" in src
+  );
+}
+
+// 全Workからサムネイル画像を収集し、最適化済みURLを生成
+const allWorks: Work[] = Object.values(WORKS).flat();
+const thumbnailUrlMap: Record<string, string> = {};
+
+for (const work of allWorks) {
+  const workId = getWorkId(work);
+  const imageSrc = getThumbnailSource(work);
+
+  // ImageMetadataの場合のみ最適化
+  if (imageSrc !== null && isImageMetadata(imageSrc)) {
+    try {
+      const optimized = await getImage({
+        src: imageSrc,
+        width: THUMBNAIL_WIDTH,
+        height: THUMBNAIL_HEIGHT,
+        // 範囲を完全に埋めるように拡大縮小し、トリミングまで行う
+        fit: "cover",
+        format: "webp",
+      });
+      thumbnailUrlMap[workId] = optimized.src;
+    } catch (error) {
+      // 最適化に失敗した場合は元の画像を使用
+      console.error(
+        `Image optimization failed for workId "${workId}" with source "${imageSrc?.src}":`,
+        error,
+      );
+      thumbnailUrlMap[workId] = imageSrc.src;
+    }
+  }
+}
 
 // // ウィンドウの最大サイズ。ビューポートが狭くなっても、このアスペクト比を保ちながら縮小する。
 // const DRAGGABLE_WINDOW_MAX_SIZE = { width: 500, height: 276 };
@@ -40,15 +90,49 @@ const carouselImages = queryAssets({
     limit={CAROUSEL_IMAGE_LIMIT}
   >
     {
-      carouselImages.map((asset) => (
-        <CarouselItem>
-          {typeof asset.src === "string" ? (
-            <Image src={asset.src} alt={asset.caption} inferSize />
-          ) : (
-            <Image src={asset.src} alt={asset.caption} />
-          )}
-        </CarouselItem>
-      ))
+      await Promise.all(
+        carouselImages.map(async (asset) => {
+          if (typeof asset.src === "string") {
+            return (
+              <CarouselItem>
+                <Image src={asset.src} alt={asset.caption} inferSize />
+              </CarouselItem>
+            );
+          }
+          // ImageMetadataの場合は最適化（デスクトップ・モバイル両方を生成）
+          const [optimized, optimizedMobile] = await Promise.all([
+            getImage({
+              src: asset.src,
+              height: CAROUSEL_HEIGHT,
+              format: "webp",
+            }),
+            getImage({
+              src: asset.src,
+              height: CAROUSEL_HEIGHT_MOBILE,
+              format: "webp",
+            }),
+          ]);
+          return (
+            <CarouselItem>
+              <picture>
+                {/* (iPhone 17 Pro Max の幅 + iPad Mini の幅)/2 = 604px */}
+                <source
+                  srcset={optimizedMobile.src}
+                  media="(max-width: 604px)"
+                />
+                <img
+                  src={optimized.src}
+                  alt={asset.caption}
+                  width={optimized.attributes.width}
+                  height={optimized.attributes.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </CarouselItem>
+          );
+        }),
+      )
     }
   </Carousel>
 
@@ -56,7 +140,7 @@ const carouselImages = queryAssets({
 
   <h1>Our Works</h1>
 
-  <WorksContainer client:load />
+  <WorksContainer client:load {thumbnailUrlMap} />
 
   <!-- <DraggableWindow
     title="REVATI Studio"
@@ -66,7 +150,7 @@ const carouselImages = queryAssets({
     <Logo3d client:only="svelte" />
   </DraggableWindow> -->
 
-  <MusicPlayer client:load />
+  <MusicPlayer client:load transition:name="music-player" transition:persist />
 </Layout>
 
 <style lang="scss">

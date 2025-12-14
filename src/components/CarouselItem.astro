@@ -41,8 +41,15 @@
     }
   }
 
-  .content > :global(img) {
+  .content > :global(img),
+  .content > :global(picture) {
     display: block;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .content > :global(picture) > :global(img) {
     height: 100%;
     width: auto;
     object-fit: contain;

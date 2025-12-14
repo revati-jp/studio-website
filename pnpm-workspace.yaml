@@ -1,0 +1,7 @@
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - esbuild
+  - sharp
+  - svelte-preprocess
+minimumReleaseAge: 1440
+trustPolicy: no-downgrade
