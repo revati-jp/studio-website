@@ -212,18 +212,11 @@
 				gap: 0 !important; // ボタン間の隙間を調整
 			}
 
-			// 前へ/次へボタンを隠す
-			:global(.control-btn.prev),
-			:global(.control-btn.next) {
-				display: none !important;
-			}
-
 			@media (max-width: 480px) {
 				order: 2;
 				width: 100%;
 				display: flex;
 				justify-content: center;
-				// padding-top: 0.5rem;
 			}
 		}
 
