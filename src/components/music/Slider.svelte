@@ -50,11 +50,9 @@
 <style lang="scss">
 	.slider {
 		// CSS variables with defaults
-		--slider-track-color: rgba(246, 233, 233, 0.2);
-		--slider-progress-color: #e16428;
-		--slider-thumb-color: #e16428;
-		--slider-disabled-track-color: rgba(246, 233, 233, 0.1);
-		--slider-disabled-thumb-color: rgba(246, 233, 233, 0.3);
+		$slider-track-color: rgba($color-background, 0.2);
+		$slider-disabled-track-color: rgba($color-background, 0.1);
+		$slider-disabled-thumb-color: rgba($color-background, 0.3);
 
 		width: 100%;
 		height: var(--slider-height);
@@ -66,10 +64,10 @@
 
 		background: linear-gradient(
 			to right,
-			var(--slider-progress-color) 0%,
-			var(--slider-progress-color) var(--slider-percentage),
-			var(--slider-track-color) var(--slider-percentage),
-			var(--slider-track-color) 100%
+			$color-accent 0%,
+			$color-accent var(--slider-percentage),
+			$slider-track-color var(--slider-percentage),
+			$slider-track-color 100%
 		);
 
 		// WebKit track
@@ -89,7 +87,7 @@
 		// Mozilla track
 		&::-moz-range-track {
 			height: var(--slider-height);
-			background: var(--slider-track-color);
+			background: $slider-track-color;
 			border-radius: var(--slider-border-radius);
 			border: none;
 		}
@@ -97,7 +95,7 @@
 		// Mozilla progress
 		&::-moz-range-progress {
 			height: var(--slider-height);
-			background: var(--slider-progress-color);
+			background: $color-accent;
 			border-radius: var(--slider-border-radius);
 		}
 
@@ -105,7 +103,7 @@
 			appearance: none;
 			width: var(--slider-thumb-size);
 			height: var(--slider-thumb-size);
-			background: var(--slider-thumb-color);
+			background: $color-accent;
 			border-radius: 50%;
 			cursor: pointer;
 			margin-top: calc((var(--slider-height) - var(--slider-thumb-size)) / 2);
@@ -119,7 +117,7 @@
 		&::-moz-range-thumb {
 			width: var(--slider-thumb-size);
 			height: var(--slider-thumb-size);
-			background: var(--slider-thumb-color);
+			background: $color-accent;
 			border-radius: 50%;
 			border: none;
 			cursor: pointer;
@@ -132,11 +130,11 @@
 
 		&.disabled {
 			cursor: not-allowed;
-			background: var(--slider-disabled-track-color) !important;
+			background: $slider-disabled-track-color !important;
 
 			&::-webkit-slider-thumb,
 			&::-moz-range-thumb {
-				background: var(--slider-disabled-thumb-color);
+				background: $slider-disabled-thumb-color;
 			}
 		}
 	}

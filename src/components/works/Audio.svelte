@@ -186,7 +186,7 @@
 <style lang="scss">
 	.custom-player {
 		background: rgba($color-secondary, 0.4);
-		border: 1px solid rgba(225, 100, 40, 0.08);
+		border: 1px solid rgba($color-accent, 0.08);
 		border-radius: 8px;
 		padding: 1rem;
 
@@ -242,7 +242,7 @@
 			.mute-btn {
 				background: transparent;
 				border: none;
-				color: rgba(246, 233, 233, 0.7);
+				color: rgba($color-background, 0.7);
 				cursor: pointer;
 				padding: 4px;
 				display: flex;
@@ -251,7 +251,7 @@
 				transition: color 0.2s ease;
 
 				&:hover {
-					color: #f6e9e9;
+					color: $color-background;
 				}
 			}
 
