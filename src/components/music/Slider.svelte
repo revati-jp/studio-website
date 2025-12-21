@@ -44,7 +44,7 @@
 	style:--slider-height={styles.height ?? '4px'}
 	style:--slider-thumb-size={styles.thumbSize ?? '12px'}
 	style:--slider-border-radius={styles.borderRadius ?? '2px'}
-	style:background={`linear-gradient(to right, var(--slider-progress-color) 0%, var(--slider-progress-color) ${percentage}%, var(--slider-track-color) ${percentage}%, var(--slider-track-color) 100%)`}
+	style:--slider-percentage={`${percentage}%`}
 />
 
 <style lang="scss">
@@ -63,6 +63,14 @@
 		cursor: pointer;
 		-webkit-appearance: none;
 		appearance: none;
+
+		background: linear-gradient(
+			to right,
+			var(--slider-progress-color) 0%,
+			var(--slider-progress-color) var(--slider-percentage),
+			var(--slider-track-color) var(--slider-percentage),
+			var(--slider-track-color) 100%
+		);
 
 		// WebKit track
 		&::-webkit-slider-track {
