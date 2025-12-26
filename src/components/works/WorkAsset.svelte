@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Audio from './Audio.svelte';
 	import type { Asset, ImageSource } from '../../types';
 	import { getYouTubeEmbedUrl } from '../../utils';
 	import ExternalLinkIcon from '../icons/ExternalLinkIcon.svelte';
@@ -139,9 +140,7 @@
 				<span class="asset-type-chip music">Music</span>
 				<h4 class="asset-title">{asset.title}</h4>
 			</div>
-			<audio controls controlslist="nodownload">
-				<source src={asset.src} />
-			</audio>
+			<Audio src={asset.src} title={asset.title} />
 		</div>
 	{:else if asset.type === 'website'}
 		<div class="asset-website">
@@ -268,11 +267,6 @@
 		margin: 0;
 		line-height: 1.3;
 		text-align: center;
-	}
-
-	.asset-music audio {
-		width: 100%;
-		border-radius: 8px;
 	}
 
 	.video-container {
