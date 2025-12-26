@@ -70,9 +70,9 @@
 		position: absolute;
 		top: 12px;
 		right: 12px;
-		background: rgba(246, 233, 233, 0.1);
-		border: 1px solid rgba(246, 233, 233, 0.2);
-		color: rgba(246, 233, 233, 0.8);
+		background: rgba($color-background, 0.1);
+		border: 1px solid rgba($color-background, 0.2);
+		color: rgba($color-background, 0.8);
 		cursor: pointer;
 		padding: 8px;
 		border-radius: 6px;
@@ -85,9 +85,9 @@
 		z-index: 1030;
 
 		&:hover {
-			color: #f6e9e9;
-			background: rgba(246, 233, 233, 0.15);
-			border-color: rgba(246, 233, 233, 0.3);
+			color: $color-background;
+			background: rgba($color-background, 0.15);
+			border-color: rgba($color-background, 0.3);
 			transform: scale(1.05);
 		}
 
@@ -103,10 +103,10 @@
 		right: 30px;
 		width: 64px;
 		height: 64px;
-		background: rgba(225, 100, 40, 0.95);
-		border: 2px solid rgba(225, 100, 40, 0.7);
+		background: rgba($color-accent, 0.95);
+		border: 2px solid rgba($color-accent, 0.7);
 		border-radius: 50%;
-		color: #f6e9e9;
+		color: $color-background;
 		cursor: pointer;
 		display: flex;
 		align-items: center;
@@ -117,8 +117,8 @@
 		pointer-events: auto;
 
 		&:hover {
-			background: rgba(225, 100, 40, 1);
-			border-color: rgba(225, 100, 40, 1);
+			background: rgba($color-accent, 1);
+			border-color: rgba($color-accent, 1);
 			transform: scale(1.1);
 			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 		}

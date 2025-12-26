@@ -53,7 +53,7 @@
 		.time {
 			font-family: 'Montserrat', sans-serif;
 			font-size: 12px;
-			color: rgba(246, 233, 233, 0.7);
+			color: rgba($color-background, 0.7);
 			min-width: 35px;
 			text-align: center;
 		}
