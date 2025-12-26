@@ -137,5 +137,10 @@
 				background: $slider-disabled-thumb-color;
 			}
 		}
+
+		&:focus-visible {
+			outline: 2px solid $color-accent;
+			outline-offset: 12px;
+		}
 	}
 </style>
