@@ -150,7 +150,7 @@
 		.control-btn {
 			background: transparent;
 			border: none;
-			color: #f6e9e9;
+			color: $color-background;
 			cursor: pointer;
 			padding: 8px;
 			border-radius: 50%;
@@ -170,20 +170,20 @@
 			}
 
 			&.play-pause {
-				background-color: #e16428;
+				background-color: $color-accent;
 
 				svg {
-					color: #f6e9e9;
+					color: $color-background;
 				}
 
 				&:hover {
-					color: rgba(225, 100, 40, 0.8);
+					color: rgba($color-accent, 0.8);
 					transform: scale(1.05);
 				}
 			}
 
 			&.disabled {
-				color: rgba(246, 233, 233, 0.3);
+				color: rgba($color-background, 0.3);
 				cursor: not-allowed;
 
 				&:hover {

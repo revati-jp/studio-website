@@ -24,7 +24,7 @@
 
 		.progress-fill {
 			height: 100%;
-			background: #e16428;
+			background: $color-accent;
 			transition: width 0.1s ease;
 			border-radius: 0 2px 2px 0;
 		}
