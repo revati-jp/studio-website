@@ -155,9 +155,9 @@
 		backdrop-filter: blur(10px);
 		border-radius: 12px;
 		padding: 24px;
-		color: #f6e9e9;
+		color: $color-background;
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-		border: 1px solid rgba(225, 100, 40, 0.3);
+		border: 1px solid rgba($color-accent, 0.3);
 		transition: all 0.3s ease;
 		z-index: 1010;
 		pointer-events: auto;
@@ -200,9 +200,9 @@
 		position: absolute;
 		top: 10px;
 		right: 10px;
-		background: rgba(246, 233, 233, 0.1);
-		border: 1px solid rgba(246, 233, 233, 0.2);
-		color: rgba(246, 233, 233, 0.8);
+		background: rgba($color-background, 0.1);
+		border: 1px solid rgba($color-background, 0.2);
+		color: rgba($color-background, 0.8);
 		cursor: pointer;
 		padding: 6px;
 		border-radius: 6px;
@@ -215,9 +215,9 @@
 		z-index: 1010;
 
 		&:hover {
-			color: #f6e9e9;
-			background: rgba(246, 233, 233, 0.15);
-			border-color: rgba(246, 233, 233, 0.3);
+			color: $color-background;
+			background: rgba($color-background, 0.15);
+			border-color: rgba($color-background, 0.3);
 			transform: scale(1.05);
 		}
 

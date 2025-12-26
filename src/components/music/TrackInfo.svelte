@@ -24,12 +24,12 @@
 			font-size: 16px;
 			font-weight: 900;
 			margin-bottom: 4px;
-			color: #f6e9e9;
+			color: $color-background;
 		}
 
 		.track-artist {
 			font-size: 14px;
-			color: rgba(246, 233, 233, 0.7);
+			color: rgba($color-background, 0.7);
 		}
 
 		&.mobile {
