@@ -28,6 +28,16 @@ import lucio250907 from "../../assets/works/250907_annc_lucio.webp";
 import cover251012 from "../../assets/works/251012_tmnl_cover.webp";
 import wny251011 from "../../assets/works/251011_annc_ow_wny.webp";
 import wny251021 from "../../assets/works/251021_annc_r6s_wny.webp";
+import challengers251227 from "../../assets/works/251227_dsgn_challengers_kv.webp";
+import commentary251227 from "../../assets/works/251227_dsgn_commentary.webp";
+import participating251227 from "../../assets/works/251227_dsgn_participating.webp";
+import prize251227 from "../../assets/works/251227_dsgn_prize.webp";
+import pro251227 from "../../assets/works/251227_dsgn_pro.webp";
+import roster2026251227 from "../../assets/works/251227_dsgn_roster2026.webp";
+import tournament251227 from "../../assets/works/251227_dsgn_tournament.webp";
+import tracer1v1251227 from "../../assets/works/251227_dsgn_tracer1v1.webp";
+import vendetta251227 from "../../assets/works/251227_dsgn_vendetta.webp";
+import victory251227 from "../../assets/works/251227_dsgn_victory.webp";
 
 export const DESIGN = [
   {
@@ -366,6 +376,65 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI メンバー募集画像 (Rainbow Six Siege)",
         src: wny251021,
+      },
+    ],
+  },
+  {
+    title: "大会　キービジュアル/各種デザイン",
+    clientName: "REVATI",
+    createdAt: "2025-12-27",
+    tags: ["デザイン"],
+    authors: ["HIKA", "ちゃちゃまる"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI Challengers CUP キービジュアル",
+        src: challengers251227,
+      },
+      {
+        type: "image",
+        caption: "Live Commentary",
+        src: commentary251227,
+      },
+      {
+        type: "image",
+        caption: "Participating Teams",
+        src: participating251227,
+      },
+      {
+        type: "image",
+        caption: "Pro Teams",
+        src: pro251227,
+      },
+      {
+        type: "image",
+        caption: "Winning Prize",
+        src: prize251227,
+      },
+      {
+        type: "image",
+        caption: "REVATI Roster 2026",
+        src: roster2026251227,
+      },
+      {
+        type: "image",
+        caption: "Tournament Table",
+        src: tournament251227,
+      },
+      {
+        type: "image",
+        caption: "1 vs 1",
+        src: tracer1v1251227,
+      },
+      {
+        type: "image",
+        caption: "神業ヴェンデッタを刮目せよ",
+        src: vendetta251227,
+      },
+      {
+        type: "image",
+        caption: "REVATI 2026 Victory",
+        src: victory251227,
       },
     ],
   },
