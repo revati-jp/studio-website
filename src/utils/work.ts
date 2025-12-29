@@ -66,7 +66,11 @@ export function queryWorks(options?: WorkQueryOptions): WorkEntry[] {
     const categoryWorks = WORKS[category as keyof WORKS];
 
     for (const work of categoryWorks) {
-      if (options?.author && !work.authors.includes(options.author)) continue;
+      if (
+        options?.author &&
+        !work.authors.some((a) => extractAuthorName(a) === options.author)
+      )
+        continue;
       if (
         options?.tags &&
         !options.tags.every((tag) => work.tags.includes(tag))
@@ -123,7 +127,7 @@ export function getMusicList(): Track[] {
       if (asset.type === "music") {
         tracks.push({
           title: asset.title,
-          artist: work.authors.join(", "),
+          artist: work.authors.map(extractAuthorName).join(", "),
           src: asset.src,
         });
       }
@@ -131,4 +135,10 @@ export function getMusicList(): Track[] {
   }
 
   return tracks;
+}
+
+function extractAuthorName(
+  author: string | { name: string; role: string },
+): string {
+  return typeof author === "string" ? author : author.name;
 }
