@@ -151,4 +151,18 @@ export const MUSIC = [
       },
     ],
   },
+  {
+    title: "Till We Die",
+    createdAt: "2025-12-27",
+    tags: ["BGM"],
+    authors: ["くりす"],
+    thumbnail: musicNoteIconImage,
+    assets: [
+      {
+        type: "music",
+        title: "Till We Die",
+        src: "/music/till-we-die.mp3",
+      },
+    ],
+  },
 ] satisfies Work[];
