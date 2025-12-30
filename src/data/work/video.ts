@@ -13,6 +13,7 @@ import roster250809 from "../../assets/works/250809_tmnl_roster.webp";
 import roster250814 from "../../assets/works/250814_tmnl_roster.webp";
 import kirinuki250830 from "../../assets/works/250830_tmnl_kirinuki.webp";
 import kirinuki251004 from "../../assets/works/251004_tmnl_kirinuki.webp";
+import roster2026251227 from "../../assets/works/251227_tmnl_rev2026roster.webp";
 
 export const VIDEO = [
   {
@@ -357,6 +358,28 @@ export const VIDEO = [
       {
         type: "tweet",
         tweetUrl: "https://x.com/sskmovo/status/1974444398344564965",
+      },
+    ],
+  },
+  {
+    title: "OW部門 ロスター告知動画",
+    clientName: "REVATI",
+    createdAt: "2025-12-27",
+    tags: ["動画編集", "デザイン", "BGM"],
+    authors: [
+      { name: "おしお", role: "動画編集・デザイン" },
+      { name: "くりす", role: "音楽制作" },
+    ],
+    thumbnail: roster2026251227,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/2004837224349925633",
+      },
+      {
+        type: "music",
+        title: "Till We Die",
+        src: "/music/till-we-die.mp3",
       },
     ],
   },

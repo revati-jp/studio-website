@@ -102,11 +102,7 @@
 			const videoWithBGMWorks = queryWorks({
 				category: 'video',
 				tags: ['動画編集', 'BGM']
-			}).filter(
-				(work) =>
-					work.assets.some((asset) => asset.type === 'video') &&
-					work.assets.some((asset) => asset.type === 'music')
-			);
+			}).filter((work) => work.assets.some((asset) => asset.type === 'music'));
 
 			const workMap = new Map<string, Work>();
 

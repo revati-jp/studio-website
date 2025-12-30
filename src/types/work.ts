@@ -15,7 +15,7 @@ export interface Work {
   title: string;
   createdAt: string;
   tags: string[];
-  authors: string[];
+  authors: (string | { name: string; role: string })[];
   assets: Asset[];
   // ここで定義されない場合、assetsの最初の要素のサムネイルを使用する
   thumbnail?: Image;

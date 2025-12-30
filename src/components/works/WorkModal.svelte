@@ -92,7 +92,11 @@
 					{#if work.authors.length > 0}
 						<div class="work-authors">
 							<span class="meta-label">制作者:</span>
-							<span class="meta-value">{work.authors.join(', ')}</span>
+							<span class="meta-value"
+								>{work.authors
+									.map((a) => (typeof a === 'string' ? a : `${a.name} (${a.role})`))
+									.join(', ')}</span
+							>
 						</div>
 					{/if}
 
