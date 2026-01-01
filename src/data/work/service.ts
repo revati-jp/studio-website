@@ -75,4 +75,19 @@ export const SERVICE = [
       },
     ],
   },
+  {
+    title: "試合解説動画 翻訳",
+    clientName: "Ocie",
+    createdAt: "2025-12-30",
+    tags: ["翻訳/通訳"],
+    authors: ["KISHI"],
+    assets: [
+      {
+        type: "video",
+        title:
+          "VARRELが特殊なイラリー構成とラマットラのサイド攻撃でTeam Falconsを圧倒した方法とは？",
+        src: "http://youtube.com/watch?v=jH3qhqwsPwo",
+      },
+    ],
+  },
 ] satisfies Work[];
