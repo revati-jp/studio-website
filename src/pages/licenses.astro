@@ -22,7 +22,8 @@ const TITLE = "ライセンス情報";
           return (
             <li>
               <h2>
-                {software.name + (software.version && `@${software.version}`)}
+                {software.name +
+                  (software.version ? `@${software.version}` : "")}
               </h2>
               <dl>
                 {software.homepage && (

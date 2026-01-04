@@ -41,6 +41,13 @@ for (const dependency of dependencies) {
     process.exit(1);
   }
   const { licenseText } = await getLicenseText(dependency);
+  if (dependency.homepage && !isSafeHomepageURL(dependency.homepage)) {
+    console.error(
+      `Unsafe homepage URL found: "${dependency.homepage}" (${dependency.name}@${dependency.version})`,
+    );
+    process.exit(1);
+  }
+
   output.push({
     name: dependency.name,
     version: dependency.version,
@@ -65,4 +72,13 @@ function isAllowedLicense(license) {
   return ALLOWED_LICENSES.some(
     (allowed) => license === allowed || license === `(${allowed})`,
   );
+}
+
+/**
+ * @param {string} inputURL
+ * @returns {boolean}
+ */
+function isSafeHomepageURL(inputURL) {
+  const url = new URL(inputURL);
+  return ["http:", "https:"].includes(url.protocol);
 }
