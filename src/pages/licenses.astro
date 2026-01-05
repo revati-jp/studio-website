@@ -2,17 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import MusicPlayer from "../components/music/MusicPlayer.svelte";
 import licenses from "../../licenses.json";
-import type { LicenseInfo, SoftwareLicense } from "../types/licenses";
-import { OTHER_LICENSES } from "../data/OTHER_LICENSES";
+import { OTHER_LICENSES } from "../data";
+import type { Dependency } from "../types";
 
-const libraries: SoftwareLicense[] = Object.entries(
-  licenses as Record<string, LicenseInfo>,
-).map(([id, license]) => ({
-  id,
-  license,
-}));
-
-const softwares: SoftwareLicense[] = libraries.concat(OTHER_LICENSES);
+const softwares: Dependency[] = [...licenses, ...OTHER_LICENSES];
 
 const TITLE = "ライセンス情報";
 ---
@@ -26,51 +19,35 @@ const TITLE = "ライセンス情報";
     <ul>
       {
         softwares.map((software) => {
-          const { license } = software;
           return (
             <li>
-              <h2>{software.id}</h2>
+              <h2>
+                {software.name +
+                  (software.version ? `@${software.version}` : "")}
+              </h2>
               <dl>
-                {license.repository !== null ? (
+                {software.homepage && (
                   <>
-                    <dt>Repository</dt>
+                    <dt>Webpage</dt>
                     <dd>
                       <a
-                        href={license.repository}
+                        href={software.homepage}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {license.repository}
+                        {software.homepage}
                       </a>
                     </dd>
                   </>
-                ) : (
-                  ""
                 )}
-                {license.copyright !== null ? (
-                  <>
-                    <dt>Copyright</dt>
-                    <dd>{license.copyright}</dd>
-                  </>
-                ) : (
-                  ""
-                )}
-                {license.licenses !== null ? (
-                  <>
-                    <dt>License</dt>
-                    <dd>{license.licenses}</dd>
-                  </>
-                ) : (
-                  ""
-                )}
+                <dt>License</dt>
+                <dd>{software.license}</dd>
               </dl>
-              {license.licenseText !== null ? (
+              {software.licenseText && (
                 <details>
                   <summary>ライセンス本文</summary>
-                  <pre>{license.licenseText}</pre>
+                  <pre>{software.licenseText}</pre>
                 </details>
-              ) : (
-                ""
               )}
             </li>
           );
