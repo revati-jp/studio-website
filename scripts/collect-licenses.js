@@ -19,6 +19,7 @@ const ALLOWED_LICENSES = [
   "MIT OR CC0-1.0",
   "OFL-1.1",
   "Python-2.0",
+  "BlueOak-1.0.0",
 ];
 
 const dependencies = await getDependencies(
