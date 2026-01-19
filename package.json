@@ -13,10 +13,10 @@
   "homepage": "https://studio.revati.jp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sarf-Esports/studio-website.git"
+    "url": "https://github.com/revati-jp/studio-website.git"
   },
   "bugs": {
-    "url": "https://github.com/Sarf-Esports/studio-website/issues"
+    "url": "https://github.com/revati-jp/studio-website/issues"
   },
   "scripts": {
     "dev": "astro dev",
