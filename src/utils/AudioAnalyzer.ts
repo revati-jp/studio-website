@@ -3,7 +3,7 @@ export class AudioAnalyzer {
   private analyser: AnalyserNode | null = null;
   private source: MediaElementAudioSourceNode | null = null;
   private gainNode: GainNode | null = null;
-  private dataArray: Uint8Array | null = null;
+  private dataArray: Uint8Array<ArrayBuffer> | null = null;
   private bufferLength = 0;
   private currentAudioElement: HTMLAudioElement | null = null;
   private static globalAudioContext: AudioContext | null = null;
