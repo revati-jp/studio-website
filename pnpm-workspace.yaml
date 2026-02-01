@@ -5,3 +5,7 @@ onlyBuiltDependencies:
   - svelte-preprocess
 minimumReleaseAge: 1440
 trustPolicy: no-downgrade
+trustPolicyExclude:
+  - chokidar@4.0.3
+  - vite@6.4.1
+blockExoticSubdeps: true

@@ -38,6 +38,12 @@ import tournament251227 from "../../assets/works/251227_dsgn_tournament.webp";
 import tracer1v1251227 from "../../assets/works/251227_dsgn_tracer1v1.webp";
 import vendetta251227 from "../../assets/works/251227_dsgn_vendetta.webp";
 import victory251227 from "../../assets/works/251227_dsgn_victory.webp";
+import illust251116 from "../../assets/works/251116_illust.webp";
+import r6s260118 from "../../assets/works/260118_annc_r6s.webp";
+import mousepad260119_1 from "../../assets/works/260119_annc_revmp_1.webp";
+import mousepad260119_2 from "../../assets/works/260119_annc_revmp_2.webp";
+import mousepad260119_3 from "../../assets/works/260119_annc_revmp_3.webp";
+import welcome260120 from "../../assets/works/260120_annc_welcome.webp";
 
 export const DESIGN = [
   {
@@ -438,4 +444,79 @@ export const DESIGN = [
       },
     ],
   },
+  {
+    title: "イラスト制作",
+    clientName: "桜馬トウカ",
+    createdAt: "2025-11-16",
+    tags: ["イラスト"],
+    authors: ["あお7"],
+    assets: [
+      {
+        type: "image",
+        caption: "制作イラスト",
+        src: illust251116,
+      },
+    ],
+  },
+  {
+    title: "シージ部門 ロスター告知画像",
+    clientName: "REVATI",
+    createdAt: "2026-01-18",
+    tags: ["デザイン"],
+    authors: ["HIKA"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI シージ部門 ロスター告知画像",
+        src: r6s260118,
+      },
+    ],
+  },
+  {
+    title: "オリジナルマウスパッド告知用画像",
+    clientName: "REVATI",
+    createdAt: "2026-01-19",
+    tags: ["デザイン"],
+    authors: ["rei"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI オリジナルマウスパッド告知用画像1",
+        src: mousepad260119_1,
+      },
+      {
+        type: "image",
+        caption: "REVATI オリジナルマウスパッド告知用画像2",
+        src: mousepad260119_2,
+      },
+      {
+        type: "image",
+        caption: "REVATI オリジナルマウスパッド告知用画像3",
+        src: mousepad260119_3,
+      },
+    ],
+  },
+  {
+    title: "OW部門 新メンバー告知画像",
+    clientName: "REVATI",
+    createdAt: "2026-01-20",
+    tags: ["デザイン"],
+    authors: ["HIKA"],
+    assets: [
+      {
+        type: "image",
+        caption: "REVATI OW部門 新メンバー告知画像",
+        src: welcome260120,
+      },
+    ],
+  },
+  // 画像貰うまで保留
+  // {
+  //   title: "オリジナルマウスパッド",
+  //   clientName: "REVATI",
+  //   createdAt: "2026-01-19",
+  //   tags: ["イラスト", "デザイン"],
+  //   authors: [{ name: "あお7", role: "イラスト" }, { name: "美作小夜子", role: "デザイン" }],
+  //   assets: [],
+  // }
 ] satisfies Work[];

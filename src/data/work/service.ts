@@ -20,7 +20,7 @@ export const SERVICE = [
       {
         type: "external",
         title: "ソースコード（リポジトリ）はこちら",
-        url: "https://github.com/Sarf-Esports/website",
+        url: "https://github.com/revati-jp/website",
       },
     ],
   },
@@ -40,7 +40,7 @@ export const SERVICE = [
       {
         type: "external",
         title: "ソースコード（リポジトリ）はこちら",
-        url: "https://github.com/Sarf-Esports/studio-website",
+        url: "https://github.com/revati-jp/studio-website",
       },
     ],
     border: "3px solid #494040ff",

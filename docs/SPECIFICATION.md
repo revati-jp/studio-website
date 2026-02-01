@@ -6,7 +6,7 @@
 
 - サイト名: REVATI Studio
 - URL: https://studio.revati.jp
-- リポジトリ: https://github.com/Sarf-Esports/studio-website
+- リポジトリ: https://github.com/revati-jp/studio-website
 
 ## サイトマップ
 
