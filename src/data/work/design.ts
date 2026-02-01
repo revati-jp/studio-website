@@ -469,7 +469,7 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI シージ部門 ロスター告知画像",
         src: r6s260118,
-      }
+      },
     ],
   },
   {
@@ -507,7 +507,7 @@ export const DESIGN = [
         type: "image",
         caption: "REVATI OW部門 新メンバー告知画像",
         src: welcome260120,
-      }
+      },
     ],
   },
   // 画像貰うまで保留
