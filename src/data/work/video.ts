@@ -14,6 +14,8 @@ import roster250814 from "../../assets/works/250814_tmnl_roster.webp";
 import kirinuki250830 from "../../assets/works/250830_tmnl_kirinuki.webp";
 import kirinuki251004 from "../../assets/works/251004_tmnl_kirinuki.webp";
 import roster2026251227 from "../../assets/works/251227_tmnl_rev2026roster.webp";
+import mixtape2511130 from "../../assets/works/251130_tmnl_mixtape1.webp";
+import mixtape2512230 from "../../assets/works/251230_tmnl_mixtape2.webp";
 
 export const VIDEO = [
   {
@@ -380,6 +382,34 @@ export const VIDEO = [
         type: "music",
         title: "Till We Die",
         src: "/music/till-we-die.mp3",
+      },
+    ],
+  },
+  {
+    title: "REVATI Mixtape Vol.1",
+    clientName: "REVATI",
+    createdAt: "2025-11-30",
+    tags: ["動画編集"],
+    authors: ["おしお"],
+    thumbnail: mixtape2511130,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/1995085403989381249/video/1",
+      },
+    ],
+  },
+  {
+    title: "REVATI Mixtape Vol.2",
+    clientName: "REVATI",
+    createdAt: "2025-12-30",
+    tags: ["動画編集"],
+    authors: ["おしお"],
+    thumbnail: mixtape2512230,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/2005926838556844208/video/1",
       },
     ],
   },
