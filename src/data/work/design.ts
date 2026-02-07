@@ -44,6 +44,15 @@ import mousepad260119_1 from "../../assets/works/260119_annc_revmp_1.webp";
 import mousepad260119_2 from "../../assets/works/260119_annc_revmp_2.webp";
 import mousepad260119_3 from "../../assets/works/260119_annc_revmp_3.webp";
 import welcome260120 from "../../assets/works/260120_annc_welcome.webp";
+import tournament251102 from "../../assets/works/251102_dsgn_tournament.webp";
+import team251102_1 from "../../assets/works/251102_dsgn_team1.webp";
+import team251102_2 from "../../assets/works/251102_dsgn_team2.webp";
+import team251102_3 from "../../assets/works/251102_dsgn_team3.webp";
+import team251102_4 from "../../assets/works/251102_dsgn_team4.webp";
+import team251102_5 from "../../assets/works/251102_dsgn_team5.webp";
+import team251102_6 from "../../assets/works/251102_dsgn_team6.webp";
+import team251102_7 from "../../assets/works/251102_dsgn_team7.webp";
+import chillingChicken260205 from "../../assets/works/260205_annc_chillingchicken.webp";
 
 export const DESIGN = [
   {
@@ -519,4 +528,67 @@ export const DESIGN = [
   //   authors: [{ name: "あお7", role: "イラスト" }, { name: "美作小夜子", role: "デザイン" }],
   //   assets: [],
   // }
+  {
+    title: "大会　ロスター/トーナメント表画像",
+    clientName: "SEOUL GALLERY",
+    createdAt: "2025-11-02",
+    tags: ["デザイン"],
+    authors: ["HIKA"],
+    assets: [
+      {
+        type: "image",
+        caption: "トーナメント表",
+        src: tournament251102,
+      },
+      {
+        type: "image",
+        caption: "チーム紹介画像",
+        src: team251102_1,
+      },
+      {
+        type: "image",
+        caption: "チーム紹介画像",
+        src: team251102_2,
+      },
+      {
+        type: "image",
+        caption: "チーム紹介画像",
+        src: team251102_3,
+      },
+      {
+        type: "image",
+        caption: "チーム紹介画像",
+        src: team251102_4,
+      },
+      {
+        type: "image",
+        caption: "チーム紹介画像",
+        src: team251102_5,
+      },
+      {
+        type: "image",
+        caption: "チーム紹介画像",
+        src: team251102_6,
+      },
+      {
+        type: "image",
+        caption: "チーム紹介画像",
+        src: team251102_7,
+      },
+    ],
+  },
+  {
+    title: "OW Academy部門 新メンバー告知画像",
+    clientName: "REVATI",
+    createdAt: "2026-02-05",
+    tags: ["デザイン"],
+    authors: ["Reku"],
+    assets: [
+      {
+        type: "image",
+        caption: "OW Academy部門 新メンバー告知画像",
+        src: chillingChicken260205,
+      },
+    ],
+  },
 ] satisfies Work[];

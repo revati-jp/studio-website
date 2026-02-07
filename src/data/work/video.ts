@@ -16,6 +16,7 @@ import kirinuki251004 from "../../assets/works/251004_tmnl_kirinuki.webp";
 import roster2026251227 from "../../assets/works/251227_tmnl_rev2026roster.webp";
 import mixtape2511130 from "../../assets/works/251130_tmnl_mixtape1.webp";
 import mixtape2512230 from "../../assets/works/251230_tmnl_mixtape2.webp";
+import mixtape260131 from "../../assets/works/260131_tmnl_mixtape3.webp";
 
 export const VIDEO = [
   {
@@ -410,6 +411,20 @@ export const VIDEO = [
       {
         type: "tweet",
         tweetUrl: "https://x.com/revati_jp/status/2005926838556844208/video/1",
+      },
+    ],
+  },
+  {
+    title: "REVATI Mixtape Vol.3",
+    clientName: "REVATI",
+    createdAt: "2026-01-31",
+    tags: ["動画編集"],
+    authors: ["おしお"],
+    thumbnail: mixtape260131,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/2017523246644785488/video/1",
       },
     ],
   },
