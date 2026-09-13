@@ -20,7 +20,7 @@ export const SERVICE = [
       },
       {
         type: "external",
-        title: "ソースコード（リポジトリ）はこちら",
+        title: "ソースコード（ミラーリポジトリ）はこちら",
         url: "https://github.com/revati-jp/website",
       },
     ],
@@ -40,7 +40,7 @@ export const SERVICE = [
       },
       {
         type: "external",
-        title: "ソースコード（リポジトリ）はこちら",
+        title: "ソースコード（ミラーリポジトリ）はこちら",
         url: "https://github.com/revati-jp/studio-website",
       },
     ],
@@ -110,11 +110,11 @@ export const SERVICE = [
         url: "https://tournament.revati.jp",
         thumbnail: revatiTournament,
       },
-      // {
-      //   type: "external",
-      //   title: "ソースコード（リポジトリ）はこちら",
-      //   url: "https://github.com/revati-jp/tournament-website",
-      // },
+      {
+        type: "external",
+        title: "ソースコード（ミラーリポジトリ）はこちら",
+        url: "https://github.com/revati-jp/tournament-website",
+      },
     ],
   },
 ] satisfies Work[];

@@ -13,7 +13,7 @@
   "homepage": "https://studio.revati.jp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/revati-jp/studio-website.git"
+    "url": "https://github.com/revati-jp/studio-website-dev.git"
   },
   "bugs": {
     "url": "https://github.com/revati-jp/studio-website/issues"

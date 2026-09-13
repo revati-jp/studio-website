@@ -10,7 +10,7 @@ REVATI Studio というクリエイティブ制作ブランドの公式ウェブ
 - フロントエンド: Astro, Svelte（インテグレーション）, SCSS
 - 言語: TypeScript（strict モード）
 - ホスティング: Cloudflare Workers
-- リポジトリ: https://github.com/revati-jp/studio-website
+- リポジトリ: https://github.com/revati-jp/studio-website-dev
 
 ## コマンド
 
