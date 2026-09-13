@@ -33,6 +33,7 @@ REVATI Studio というクリエイティブ制作ブランドの公式ウェブ
 ## その他の指示
 
 - `z-index` プロパティを使用する際は、`docs/SPECIFICATION.md` 内の z-index リストを更新すること。
+- コミットメッセージは Conventional Commits に従うこと。ただし件名と本文は日本語にすること。（`<type>[(optional-scope)]: <description>` + 任意の本文とフッター）
 
 ## その他ドキュメント
 
