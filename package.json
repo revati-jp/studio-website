@@ -7,13 +7,13 @@
   "license": "BSD-3-Clause",
   "author": "REVATI Studio",
   "contributors": [
-    "Rinrin.rs <rinrin0413.valley@gmail.com>",
+    "Rinrin.rs <rinrin0413.rs@gmail.com>",
     "RetoRuto9900K <tutinoko2048@gmail.com>"
   ],
   "homepage": "https://studio.revati.jp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/revati-jp/studio-website.git"
+    "url": "https://github.com/revati-jp/studio-website-dev.git"
   },
   "bugs": {
     "url": "https://github.com/revati-jp/studio-website/issues"
@@ -56,6 +56,7 @@
     "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-svelte": "^3.5.2",
+    "rollup-plugin-license": "^3.7.1",
     "svelte-preprocess": "^6.0.5",
     "typescript-eslint": "^8.61.0",
     "wrangler": "^4.130.0"
@@ -65,7 +66,7 @@
     "packageManager": {
       "name": "pnpm",
       "version": "12.3.4",
-      "onFail": "error"
+      "onFail": "download"
     }
   }
 }

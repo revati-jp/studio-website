@@ -6,7 +6,9 @@
 
 - サイト名: REVATI Studio
 - URL: https://studio.revati.jp
-- リポジトリ: https://github.com/revati-jp/studio-website
+- リポジトリ:
+  - 開発 (Private): https://github.com/revati-jp/studio-website-dev
+  - ミラー (Public): https://github.com/revati-jp/studio-website
 
 ## サイトマップ
 
