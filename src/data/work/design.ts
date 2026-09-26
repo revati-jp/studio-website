@@ -86,6 +86,13 @@ import teams260505 from "../../assets/works/2026/05/260505_dsgn_teams.webp";
 import tournamentTable260505 from "../../assets/works/2026/05/260505_dsgn_tournament-table.webp";
 import interview260505 from "../../assets/works/2026/05/260505_dsgn_interview.webp";
 import waiting260505 from "../../assets/works/2026/05/260505_tmnl_waiting-screen.webp";
+import owcs260601 from "../../assets/works/2026/06/260601_annc_owcs.webp";
+import r6sRoster260607 from "../../assets/works/2026/06/260607_annc_r6s-roster.webp";
+import leave260701 from "../../assets/works/2026/07/260701_annc_leave.webp";
+import academy260712 from "../../assets/works/2026/07/260712_annc_academy.webp";
+import leave260801 from "../../assets/works/2026/08/260801_annc_leave.webp";
+import roster260823 from "../../assets/works/2026/08/260823_annc_roster.webp";
+import roster260907 from "../../assets/works/2026/09/260907_annc_roster.webp";
 
 export const DESIGN = [
   {
@@ -891,5 +898,73 @@ export const DESIGN = [
         src: present260505,
       },
     ],
+  },
+  {
+    title: "owcs試合告知画像",
+    clientName: "REVATI",
+    createdAt: "2026-06-01",
+    tags: ["デザイン"],
+    authors: ["HIKA"],
+    assets: [{ type: "image", caption: "owcs試合告知画像", src: owcs260601 }],
+  },
+  {
+    title: "ロスター・ストリーマー発表画像",
+    clientName: "REVATI",
+    createdAt: "2026-06-07",
+    tags: ["デザイン"],
+    authors: ["rei"],
+    assets: [
+      {
+        type: "image",
+        caption: "ロスター・ストリーマー発表画像",
+        src: r6sRoster260607,
+      },
+    ],
+  },
+  {
+    title: "脱退発表画像",
+    clientName: "REVATI",
+    createdAt: "2026-07-01",
+    tags: ["デザイン"],
+    authors: ["Reku"],
+    assets: [{ type: "image", caption: "脱退発表画像", src: leave260701 }],
+  },
+  {
+    title: "Academy部門 メンバー発表画像",
+    clientName: "REVATI",
+    createdAt: "2026-07-12",
+    tags: ["デザイン"],
+    authors: ["Reku"],
+    assets: [
+      {
+        type: "image",
+        caption: "Academy部門 メンバー発表画像",
+        src: academy260712,
+      },
+    ],
+  },
+  {
+    title: "脱退発表画像",
+    clientName: "REVATI",
+    createdAt: "2026-08-01",
+    tags: ["デザイン"],
+    authors: ["Reku"],
+    assets: [{ type: "image", caption: "脱退発表画像", src: leave260801 }],
+  },
+  {
+    title: "ロスター発表画像",
+    clientName: "REVATI",
+    createdAt: "2026-08-23",
+    tags: ["デザイン"],
+    authors: ["rei"],
+    assets: [{ type: "image", caption: "ロスター発表画像", src: roster260823 }],
+  },
+  {
+    title: "ロスター発表画像",
+    clientName: "REVATI",
+    createdAt: "2026-09-07",
+    tags: ["デザイン"],
+    authors: ["HIKA"],
+    assets: [{ type: "image", caption: "ロスター発表画像", src: roster260907 }],
   },
 ] satisfies Work[];
