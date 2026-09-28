@@ -30,10 +30,10 @@
     "check": "astro sync && astro check --tsconfig ./tsconfig.json"
   },
   "dependencies": {
-    "@astrojs/svelte": "^8.1.2",
+    "@astrojs/svelte": "^9.0.1",
     "@threlte/core": "^8.6.1",
     "@threlte/extras": "^9.22.0",
-    "astro": "^6.4.8",
+    "astro": "^7.3.5",
     "embla-carousel": "^8.6.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "sass": "^1.105.0",
