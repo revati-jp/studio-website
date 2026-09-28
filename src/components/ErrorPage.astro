@@ -24,7 +24,9 @@ const { statusCode, title, message } = Astro.props;
         autoRotateSpeed={10}
       />
     </div>
-    <h1>{statusCode} {title}</h1>
+    <h1>
+      {statusCode} {title}
+    </h1>
     <p>{message}</p>
     <a href="/">ホームへ戻る</a>
   </div>

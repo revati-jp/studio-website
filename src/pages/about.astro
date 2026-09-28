@@ -61,44 +61,45 @@ export const SUBTITLE = "/ Creative Studio";
     <section>
       <h1>
         <span class="title">{TITLE}</span>
-        <span class="ruby">[レバティ・スタジオ]</span><br class="title-br" />
+        <span class="ruby">[レバティ・スタジオ]</span>
+        <br class="title-br" />
         <span class="subtitle">{SUBTITLE}</span>
       </h1>
       <p class="theme">
-        <span class="concept">“創造性のすべてを、ここに。“</span
-        >あらゆるクリエイティブをワンストップで
+        <span class="concept">“創造性のすべてを、ここに。“</span>
+        あらゆるクリエイティブをワンストップで
       </p>
       <div>
         <h2>主要なサービス領域</h2>
-        <ul>{SERVICES.map((s) => <li class="service">{s}</li>)}</ul>
+        <ul>
+          {SERVICES.map((s) => (
+            <li class="service">{s}</li>
+          ))}
+        </ul>
       </div>
       <div class="process-container">
         <h2>手続き</h2>
         <ul class="process">
-          {
-            PROCESS.map((step, i) => (
-              <li class="step">
-                <div class="step-num">{i + 1}</div>
-                <div class="step-content">
-                  <h3 class="step-title">{step.title}</h3>
-                  <p class="step-desc">{step.desc}</p>
-                </div>
-              </li>
-            ))
-          }
+          {PROCESS.map((step, i) => (
+            <li class="step">
+              <div class="step-num">{i + 1}</div>
+              <div class="step-content">
+                <h3 class="step-title">{step.title}</h3>
+                <p class="step-desc">{step.desc}</p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
       <div class="faq">
         <h2>よくある質問</h2>
         <div class="faq-list">
-          {
-            FAQ.map((item) => (
-              <div class="faq-item">
-                <h3 class="faq-question">{item.question}</h3>
-                <p class="faq-answer">{item.answer}</p>
-              </div>
-            ))
-          }
+          {FAQ.map((item) => (
+            <div class="faq-item">
+              <h3 class="faq-question">{item.question}</h3>
+              <p class="faq-answer">{item.answer}</p>
+            </div>
+          ))}
         </div>
         <div class="faq-message">
           ジャンルの制限はございません。お客様が形にしたい想いやコンセプトを、理想的な形でデザインに落とし込みます。まずは「何を作りたいか」を、お気軽にお聞かせください。

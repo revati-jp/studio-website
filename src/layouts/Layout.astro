@@ -43,7 +43,8 @@ Web 開発だけでなく、Discord ボットやソフトウェア開発など�
 
 © 2025 - 2026 REVATI Studio | BSD 3-Clause "New" or "Revised" License
 
---><!doctype html>
+-->
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
@@ -99,11 +100,15 @@ Web 開発だけでなく、Discord ボットやソフトウェア開発など�
   </head>
 
   <body>
-    <div class="header-container"><Header /></div>
+    <div class="header-container">
+      <Header />
+    </div>
     <main transition:animate="fade">
       <slot />
     </main>
-    <div class="footer-container"><Footer /></div>
+    <div class="footer-container">
+      <Footer />
+    </div>
     <FixedLinks />
   </body>
 </html>

@@ -89,51 +89,46 @@ for (const work of allWorks) {
     random
     limit={CAROUSEL_IMAGE_LIMIT}
   >
-    {
-      await Promise.all(
-        carouselImages.map(async (asset) => {
-          if (typeof asset.src === "string") {
-            return (
-              <CarouselItem>
-                <Image src={asset.src} alt={asset.caption} inferSize />
-              </CarouselItem>
-            );
-          }
-          // ImageMetadataの場合は最適化（デスクトップ・モバイル両方を生成）
-          const [optimized, optimizedMobile] = await Promise.all([
-            getImage({
-              src: asset.src,
-              height: CAROUSEL_HEIGHT,
-              format: "webp",
-            }),
-            getImage({
-              src: asset.src,
-              height: CAROUSEL_HEIGHT_MOBILE,
-              format: "webp",
-            }),
-          ]);
+    {await Promise.all(
+      carouselImages.map(async (asset) => {
+        if (typeof asset.src === "string") {
           return (
             <CarouselItem>
-              <picture>
-                {/* (iPhone 17 Pro Max の幅 + iPad Mini の幅)/2 = 604px */}
-                <source
-                  srcset={optimizedMobile.src}
-                  media="(max-width: 604px)"
-                />
-                <img
-                  src={optimized.src}
-                  alt={asset.caption}
-                  width={optimized.attributes.width}
-                  height={optimized.attributes.height}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <Image src={asset.src} alt={asset.caption} inferSize />
             </CarouselItem>
           );
-        }),
-      )
-    }
+        }
+        // ImageMetadataの場合は最適化（デスクトップ・モバイル両方を生成）
+        const [optimized, optimizedMobile] = await Promise.all([
+          getImage({
+            src: asset.src,
+            height: CAROUSEL_HEIGHT,
+            format: "webp",
+          }),
+          getImage({
+            src: asset.src,
+            height: CAROUSEL_HEIGHT_MOBILE,
+            format: "webp",
+          }),
+        ]);
+        return (
+          <CarouselItem>
+            <picture>
+              {/* (iPhone 17 Pro Max の幅 + iPad Mini の幅)/2 = 604px */}
+              <source srcset={optimizedMobile.src} media="(max-width: 604px)" />
+              <img
+                src={optimized.src}
+                alt={asset.caption}
+                width={optimized.attributes.width}
+                height={optimized.attributes.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </CarouselItem>
+        );
+      }),
+    )}
   </Carousel>
 
   <Spacer height="1rem" />
