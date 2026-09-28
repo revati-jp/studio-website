@@ -24,7 +24,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "licenses": "node ./scripts/collect-licenses.ts",
-    "format": "prettier . --write",
+    "format": "prettier . --write --log-level warn",
     "lint": "prettier --check . && eslint \"src/**/*.{js,ts,astro}\"",
     "lint:fix": "prettier --check . && eslint \"src/**/*.{js,ts,astro}\" --fix",
     "check": "astro sync && astro check --tsconfig ./tsconfig.json"
