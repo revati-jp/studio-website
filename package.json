@@ -37,7 +37,7 @@
     "embla-carousel": "^8.6.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "sass": "^1.105.0",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.5",
     "svelte": "^5.57.1",
     "three": "^0.186.1",
     "typescript": "^6.0.3"
