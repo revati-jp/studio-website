@@ -15,21 +15,19 @@ const { pathname } = Astro.url;
 
 <nav>
   <ul>
-    {
-      NAVIGATION_ITEMS.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            class:list={[
-              (item.href === pathname || item.href + "/" === pathname) &&
-                "active",
-            ]}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))
-    }
+    {NAVIGATION_ITEMS.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class:list={[
+            (item.href === pathname || item.href + "/" === pathname) &&
+              "active",
+          ]}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
   </ul>
 </nav>
 

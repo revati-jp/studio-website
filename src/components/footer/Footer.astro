@@ -26,19 +26,17 @@ const NAVIGATION_ITEMS: {
 <footer>
   <p class="copyright">{COPYRIGHT}</p>
   <ul>
-    {
-      NAVIGATION_ITEMS.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            target={item.isExternal ? "_blank" : null}
-            rel={item.isExternal ? "noopener" : null}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))
-    }
+    {NAVIGATION_ITEMS.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          target={item.isExternal ? "_blank" : null}
+          rel={item.isExternal ? "noopener" : null}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
   </ul>
 </footer>
 

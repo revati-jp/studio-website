@@ -27,6 +27,10 @@ import rejoin260511 from "../../assets/works/2026/05/260507_tmnl_rejoin.webp";
 import roster260511 from "../../assets/works/2026/05/260511_tmnl_roster.webp";
 import mixtape260430 from "../../assets/works/2026/04/260430_tmnl_mixtape6.webp";
 import mixtape260531 from "../../assets/works/2026/05/260531_tmnl_mixtape7.webp";
+import join260623 from "../../assets/works/2026/06/260623_tmnl_join.webp";
+import mixtape260630 from "../../assets/works/2026/06/260630_tmnl_mixtape8.webp";
+import mixtape260731 from "../../assets/works/2026/07/260731_tmnl_mixtape9.webp";
+import mixtape260831 from "../../assets/works/2026/08/260831_tmnl_mixtape10.webp";
 
 export const VIDEO = [
   {
@@ -612,6 +616,76 @@ export const VIDEO = [
       {
         type: "tweet",
         tweetUrl: "https://x.com/revati_jp/status/2061010817307533354",
+      },
+    ],
+  },
+  {
+    title: "加入発表映像",
+    clientName: "REVATI",
+    createdAt: "2026-06-23",
+    tags: ["動画編集", "デザイン"],
+    authors: ["Reku"],
+    thumbnail: join260623,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/2069329619052838931/video/1",
+      },
+    ],
+  },
+  {
+    title: "REVATI Mixtape Vol.8",
+    clientName: "REVATI",
+    createdAt: "2026-06-30",
+    tags: ["動画編集"],
+    authors: ["おしお"],
+    thumbnail: mixtape260630,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/2071912671486890366/video/1",
+      },
+    ],
+  },
+  {
+    title: "REVATI Mixtape Vol.9",
+    clientName: "REVATI",
+    createdAt: "2026-07-31",
+    tags: ["動画編集"],
+    authors: ["おしお"],
+    thumbnail: mixtape260731,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/2083146738504966236/video/1",
+      },
+    ],
+  },
+  {
+    title: "REVATI Mixtape Vol.10",
+    clientName: "REVATI",
+    createdAt: "2026-08-31",
+    tags: ["動画編集"],
+    authors: ["おしお"],
+    thumbnail: mixtape260831,
+    assets: [
+      {
+        type: "tweet",
+        tweetUrl: "https://x.com/revati_jp/status/2094349479411429821?s=20",
+      },
+    ],
+  },
+  {
+    title: "最強にかっこいい武器を作ったぞ！！",
+    clientName: "れる",
+    createdAt: "2026-07-28",
+    tags: ["動画編集"],
+    authors: ["ちゃちゃまる"],
+    assets: [
+      {
+        type: "video",
+        title: "最強にかっこいい武器を作ったぞ！！",
+        src: "https://www.youtube.com/watch?v=0R3N9RWY7dA",
       },
     ],
   },

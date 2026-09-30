@@ -17,42 +17,39 @@ const TITLE = "ライセンス情報";
       本ウェブサイトの開発に使用しているライブラリとそのライセンスを以下に示します。
     </p>
     <ul>
-      {
-        softwares.map((software) => {
-          return (
-            <li>
-              <h2>
-                {software.name +
-                  (software.version ? `@${software.version}` : "")}
-              </h2>
-              <dl>
-                {software.homepage && (
-                  <>
-                    <dt>Webpage</dt>
-                    <dd>
-                      <a
-                        href={software.homepage}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {software.homepage}
-                      </a>
-                    </dd>
-                  </>
-                )}
-                <dt>License</dt>
-                <dd>{software.license}</dd>
-              </dl>
-              {software.licenseText && (
-                <details>
-                  <summary>ライセンス本文</summary>
-                  <pre>{software.licenseText}</pre>
-                </details>
+      {softwares.map((software) => {
+        return (
+          <li>
+            <h2>
+              {software.name + (software.version ? `@${software.version}` : "")}
+            </h2>
+            <dl>
+              {software.homepage && (
+                <>
+                  <dt>Webpage</dt>
+                  <dd>
+                    <a
+                      href={software.homepage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {software.homepage}
+                    </a>
+                  </dd>
+                </>
               )}
-            </li>
-          );
-        })
-      }
+              <dt>License</dt>
+              <dd>{software.license}</dd>
+            </dl>
+            {software.licenseText && (
+              <details>
+                <summary>ライセンス本文</summary>
+                <pre>{software.licenseText}</pre>
+              </details>
+            )}
+          </li>
+        );
+      })}
     </ul>
   </div>
 

@@ -28,25 +28,23 @@ const LINKS: {
 ---
 
 <ul>
-  {
-    LINKS.map((link) => (
-      <li>
-        <a
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={link.title}
-        >
-          <Image
-            src={link.logo}
-            alt={link.title}
-            class="logo"
-            style={`--scale: ${link.scale ?? 1}`}
-          />
-        </a>
-      </li>
-    ))
-  }
+  {LINKS.map((link) => (
+    <li>
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={link.title}
+      >
+        <Image
+          src={link.logo}
+          alt={link.title}
+          class="logo"
+          style={`--scale: ${link.scale ?? 1}`}
+        />
+      </a>
+    </li>
+  ))}
 </ul>
 
 <style lang="scss">
